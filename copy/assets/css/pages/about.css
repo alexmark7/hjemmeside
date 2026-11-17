@@ -1,0 +1,437 @@
+/* ==========================================================================
+   About page — SEP1 software engineering case study
+   Adds the project summary strip, process rail, philosophy comparison,
+   specification cards, and repository fact sheet on top of the shared
+   archival collector's studio design system.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. Project summary strip
+   -------------------------------------------------------------------------- */
+
+.project-meta {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.project-meta__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.4rem;
+}
+
+.project-meta dt {
+  margin: 0;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.project-meta dd {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 0.45vw + 0.92rem, 1.18rem);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.project-meta .status {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  white-space: normal;
+}
+
+/* --------------------------------------------------------------------------
+   02. Case-study eyebrows and shared section details
+   -------------------------------------------------------------------------- */
+
+p.about-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 var(--space-4);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+p.about-kicker::before {
+  content: "";
+  flex: none;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--yellow);
+}
+
+#philosophy p.about-kicker::before {
+  background: var(--teal);
+}
+
+#repository p.about-kicker::before {
+  background: var(--lilac-ink);
+}
+
+/* --------------------------------------------------------------------------
+   03. The collector problem and four-stage process
+   -------------------------------------------------------------------------- */
+
+.about-process {
+  margin-top: clamp(2.25rem, 4vw, 3.5rem);
+  padding-top: clamp(1.75rem, 3vw, 2.75rem);
+  border-top: 1px solid var(--line-strong);
+}
+
+.about-process__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2.5rem;
+  margin-bottom: var(--space-5);
+}
+
+.about-process__head h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+}
+
+.about-process__head p {
+  max-width: 53ch;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+#introduction .workflow-strip h4 {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.about-process__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: var(--space-4) 0 0;
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+.about-process__note .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.12rem;
+}
+
+/* --------------------------------------------------------------------------
+   04. Product philosophy comparison
+   -------------------------------------------------------------------------- */
+
+.about-compare {
+  margin-top: var(--space-6);
+}
+
+.about-compare .comparison-split__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-compare .comparison-split__head {
+  margin-bottom: var(--space-3);
+}
+
+.about-compare h3 {
+  margin-bottom: var(--space-4);
+  font-size: clamp(1.3rem, 1.6vw, 1.6rem);
+}
+
+.about-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-list li {
+  position: relative;
+  margin: 0;
+  padding-left: 1.75rem;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+.about-list--check li::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: 0.1rem;
+  width: 0.72rem;
+  height: 0.4rem;
+  border-left: 2px solid var(--teal);
+  border-bottom: 2px solid var(--teal);
+  transform: rotate(-45deg);
+}
+
+.about-list--omit li::before {
+  content: "×";
+  position: absolute;
+  top: 0;
+  left: 0.1rem;
+  color: var(--red-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.about-principle {
+  display: grid;
+  gap: var(--space-2);
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  border-left: 5px solid var(--yellow);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-principle blockquote {
+  margin: 0;
+}
+
+.about-principle blockquote p {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+}
+
+.about-principle figcaption {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   05. Confirmed vs. to-be-confirmed specification cards
+   -------------------------------------------------------------------------- */
+
+.about-spec {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-spec__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.about-spec__head .mono-tag .icon {
+  width: 0.95em;
+  height: 0.95em;
+}
+
+.about-spec h3 {
+  margin-bottom: var(--space-4);
+}
+
+.about-spec__count {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.about-spec .spec-list {
+  margin-bottom: var(--space-4);
+}
+
+.about-spec__note {
+  margin: auto 0 0;
+  padding-top: var(--space-3);
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+  border-top: 1px dashed var(--line-strong);
+}
+
+/* --------------------------------------------------------------------------
+   06. Team cards with role tags
+   -------------------------------------------------------------------------- */
+
+#team .team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#team .team-card > p:not(.team-card__role) {
+  flex: 1;
+  margin: 0 0 var(--space-3);
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}
+
+#team .team-card__tags {
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+#team .team-card__tags .mono-tag {
+  font-size: 0.64rem;
+  letter-spacing: 0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   07. Repository fact sheet
+   -------------------------------------------------------------------------- */
+
+.about-repo__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.about-repo h3 {
+  margin-bottom: var(--space-4);
+}
+
+.about-repo .spec-list {
+  margin-bottom: 0;
+}
+
+.about-repo .spec-list dd .mono-tag {
+  margin-left: 0.25rem;
+  font-size: 0.64rem;
+  vertical-align: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   08. Specification roadmap table
+   -------------------------------------------------------------------------- */
+
+.about-table__count {
+  display: inline-block;
+  margin-left: 0.55rem;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+#future .data-table th:first-child,
+#future .data-table td:first-child {
+  min-width: 11rem;
+}
+
+#future .data-table th:last-child,
+#future .data-table td:last-child {
+  width: 8.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   09. Responsive adjustments
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .about-process__head {
+    display: block;
+  }
+
+  .about-process__head h3 {
+    margin-bottom: var(--space-2);
+  }
+
+  #technology .spec-list {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  #technology .spec-list dt {
+    margin-top: var(--space-4);
+  }
+
+  #technology .spec-list dt:first-child {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .data-table {
+    min-width: 40rem;
+  }
+
+  .data-table caption {
+    max-width: calc(100vw - 3rem);
+  }
+
+  #future .data-table th:last-child,
+  #future .data-table td:last-child {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .spec-list {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .spec-list dt {
+    margin-top: var(--space-4);
+  }
+
+  .spec-list dt:first-child {
+    margin-top: 0;
+  }
+
+  .about-compare h3 {
+    font-size: 1.28rem;
+  }
+
+  .about-principle blockquote p {
+    font-size: 1.05rem;
+  }
+
+  .about-spec__count {
+    display: none;
+  }
+}

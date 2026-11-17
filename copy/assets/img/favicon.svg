@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Binderly">
+  <rect x="10" y="12" width="40" height="44" rx="8" fill="#ffd23f" stroke="#17171c" stroke-width="3.5" transform="rotate(-8 30 34)"/>
+  <rect x="13" y="10" width="40" height="44" rx="8" fill="#ff5a5f" stroke="#17171c" stroke-width="3.5" transform="rotate(5 33 32)"/>
+  <rect x="12" y="8" width="40" height="44" rx="8" fill="#2f5bff" stroke="#17171c" stroke-width="3.5"/>
+  <path d="M22 20h20M22 28h20M22 36h12" stroke="#fff9ef" stroke-width="3" stroke-linecap="round"/>
+</svg>

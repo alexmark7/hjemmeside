@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import &amp; export — Binderly guide</title>
+  <meta name="description" content="A beginner-friendly guide to exporting a Binderly collection as a backup file and importing it again, including what the file contains and the warnings to read before replacing a collection.">
+  <meta name="theme-color" content="#fff7e6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Import &amp; export — Binderly guide">
+  <meta property="og:description" content="How backing up and restoring a Pokémon collection is intended to work in Binderly, with seven steps for export, seven for import, and the warnings that matter.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/import-export.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--sky">
+      <div class="container page-hero__inner">
+        <div>
+          <p class="tab-label">Guide 5 of 5</p>
+          <h1>Back up your collection. Restore it when you need to.</h1>
+          <p class="lead">An export creates a file you keep. An import puts the collection stored in one of those files back into Binderly. This guide walks through both, one step at a time, and shows where the irreversible part of an import begins.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#exporting">Start with exporting</a>
+            <a class="btn btn--ghost" href="#importing">Jump to importing</a>
+          </div>
+        </div>
+        <aside class="page-hero__aside" aria-labelledby="import-export-status">
+          <h2 id="import-export-status">Feature status</h2>
+          <p><span class="status status--planned" data-feature-status="importExport">Planned</span></p>
+          <p>Import &amp; export is planned for a later release. It is not confirmed in the current build of Binderly.</p>
+          <p class="muted">The first public release has not been published, so there is no download to check yet.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container container--narrow">
+        <div class="panel panel--warning">
+          <h2 class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>This guide describes an intended workflow</h2>
+          <p>Import &amp; export is a <strong>planned</strong> feature in the project plan. It may change before release, and it is not confirmed for the current version of the app. Treat the steps below as the intended design, not as a description of buttons you can press today.</p>
+          <p>Because the first public release is still unpublished, there is nothing to download and no backup you can create in Binderly yet. When a release exists, the <a href="download.html">Download page</a> will be the place to check what it includes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="export-import-glance">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div class="section-head__text">
+            <p class="ie-kicker">Two actions, two different outcomes</p>
+            <h2 id="export-import-glance">Export vs. import at a glance</h2>
+            <p>Export copies your collection out. Import writes a backup back in. Only one of them touches the collection you already have.</p>
+          </div>
+        </div>
+
+        <div class="comparison-split">
+          <div class="comparison-split__col comparison-split__col--muted">
+            <div class="comparison-split__head">
+              <span class="ie-glance__label"><span class="icon icon--save" aria-hidden="true"></span>Export</span>
+              <span class="mono-tag mono-tag--teal">Safe · non-destructive</span>
+            </div>
+            <h3>Creates a backup file</h3>
+            <p>Binderly reads the collection on screen and writes it to one file you choose. Nothing in the app changes — the export is an extra copy, not a move.</p>
+            <ul class="ie-points">
+              <li>Your collection is unchanged</li>
+              <li>Safe to repeat any time</li>
+              <li>You choose the folder and name</li>
+              <li>Interrupting it costs nothing</li>
+            </ul>
+            <div class="ie-file">
+              <span class="ie-file__icon" aria-hidden="true"><span class="icon icon--save"></span></span>
+              <span class="ie-file__name">collection-backup-2026-11-17.json</span>
+            </div>
+            <p class="ie-glance__after">Result: one file you can store or copy anywhere.</p>
+          </div>
+          <div class="comparison-split__col">
+            <div class="comparison-split__head">
+              <span class="ie-glance__label"><span class="icon icon--transfer" aria-hidden="true"></span>Import</span>
+              <span class="mono-tag mono-tag--red">Destructive · replaces</span>
+            </div>
+            <h3>Replaces the current collection</h3>
+            <p>Binderly reads a backup and, after you confirm, swaps the current collection for the one in the file. Entries that are not in the backup are not kept alongside it.</p>
+            <ul class="ie-points ie-points--warn">
+              <li>Changes what Binderly stores</li>
+              <li>Requires a confirmation step</li>
+              <li>No in-app undo afterwards</li>
+              <li>Cancelling changes nothing</li>
+            </ul>
+            <div class="ie-file ie-file--replace">
+              <span class="ie-file__icon" aria-hidden="true"><span class="icon icon--warning"></span></span>
+              <span class="ie-file__name">Current collection <span class="ie-file__arrow" aria-hidden="true">→</span> collection in the file</span>
+            </div>
+            <p class="ie-glance__after">Result: the file's collection becomes your collection.</p>
+          </div>
+        </div>
+
+        <p class="ie-glance__rule"><strong>Rule of thumb:</strong> export before you import. The export you make first is the way back.</p>
+      </div>
+    </section>
+
+    <section class="section section--blue" id="exporting">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="ie-kicker">Copy out · nothing in the app changes</p>
+            <h2>Exporting a collection</h2>
+            <p>An export turns the collection you are viewing into one file you can keep. Nothing in Binderly changes when you export — the file is an extra copy, not a move.</p>
+          </div>
+          <span class="status status--planned" data-feature-status="importExport">Planned</span>
+        </div>
+
+        <ol class="steps steps--checklist">
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Open collection management</h3>
+              <p>Start in Binderly with the collection you want to copy. Open <strong>My collection</strong>, then the <strong>Import / export</strong> screen from the app navigation. Check that the collection on screen is the one you mean to back up before you continue.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Where to find it</p>
+                <div class="ie-path">
+                  <span class="visually-hidden">Example path: </span>
+                  <span class="ie-path__node"><span class="icon icon--binder" aria-hidden="true"></span>My collection</span>
+                  <span class="ie-path__sep" aria-hidden="true">›</span>
+                  <span class="ie-path__node ie-path__node--current"><span class="icon icon--transfer" aria-hidden="true"></span>Import / export</span>
+                </div>
+                <p class="ie-mini__note">The screen lists both actions: <strong>Export collection</strong> and <strong>Import a collection backup</strong>.</p>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Select Export</h3>
+              <p>Choose <strong>Export collection</strong>. Binderly gathers the entries in your collection — card, variant, condition, and quantity — and prepares them for a single backup file. No file has been written yet.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/export-interface.svg" alt="Placeholder mockup of the Binderly Import / export screen, with an Export collection panel that lists card identifiers, variants, conditions, quantities, and a sample backup filename." width="1600" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — the intended Import / export screen and its Export collection panel.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Open the system file-saving dialog</h3>
+              <p>Continuing opens the save dialog provided by your operating system, not a window drawn by Binderly. It may look different on your computer, but it works like any other Save dialog you have used.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/export-file-dialog.svg" alt="Placeholder operating system dialog titled Save collection backup, with a file name field, a Collection backup file type, a list of recent backup files, and Cancel and Save backup buttons." width="1400" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — a system save dialog with a suggested backup filename.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Choose a location</h3>
+              <p>Pick a folder you will remember, such as Documents or a dedicated Binderly folder. The placeholder dialog shows Documents › Binderly as an example, not as a required location. A backup is only useful if you can find it again.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Example folder path</p>
+                <div class="ie-path">
+                  <span class="visually-hidden">Example path: </span>
+                  <span class="ie-path__node">Documents</span>
+                  <span class="ie-path__sep" aria-hidden="true">/</span>
+                  <span class="ie-path__node">Binderly</span>
+                  <span class="ie-path__sep" aria-hidden="true">/</span>
+                  <span class="ie-path__node ie-path__node--file">collection-backup-2026-11-17.json</span>
+                </div>
+                <p class="ie-mini__note">Any folder you will remember works. A backup you cannot find is not a backup.</p>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Choose a filename if prompted</h3>
+              <p>The dialog may suggest a name such as <span class="chip">collection-backup-2026-11-17.json</span>. Keep it or write your own. A date in the name tells you when the backup was made. Keep the file type the dialog offers; changing the extension can make the file harder to recognise later.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Reading the suggested name</p>
+                <p class="ie-filename">collection-backup-2026-11-17.json</p>
+                <ul class="ie-legend">
+                  <li><span class="mono-tag">collection-backup</span> what the file holds</li>
+                  <li><span class="mono-tag mono-tag--blue">2026-11-17</span> the day you exported</li>
+                  <li><span class="mono-tag mono-tag--teal">.json</span> keep the offered file type</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Confirm the export</h3>
+              <p>Choose the save button in the dialog. Binderly should then write the file and show a confirmation. If you cancel the dialog instead, no file is created and your collection stays exactly as it is.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">What your choice does</p>
+                <ul class="ie-outcomes">
+                  <li class="ie-outcome ie-outcome--safe">
+                    <span class="ie-outcome__icon" aria-hidden="true"><span class="icon icon--save"></span></span>
+                    <div>
+                      <strong>Save backup</strong>
+                      <span>The file is written to the folder you chose.</span>
+                    </div>
+                  </li>
+                  <li class="ie-outcome ie-outcome--neutral">
+                    <span class="ie-outcome__icon" aria-hidden="true">×</span>
+                    <div>
+                      <strong>Cancel</strong>
+                      <span>No file is created. Your collection is untouched.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Locate the saved backup file</h3>
+              <p>Open the folder you chose and check that the file is there. Note the path, or copy the file to a second place. If it is missing, look in the folder you selected in step four before exporting again.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Backup check</p>
+                <ul class="checklist-grid ie-checks">
+                  <li>The file appears in the folder you chose</li>
+                  <li>The name still ends in .json</li>
+                  <li>A second copy sits somewhere you trust</li>
+                </ul>
+                <p class="ie-mini__note">Missing? Re-check the folder from step four before exporting again.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="ie-manifest mt-6">
+          <div class="ie-manifest__head">
+            <div>
+              <p class="ie-kicker">What the backup carries</p>
+              <h3>Five details an import needs to rebuild your collection</h3>
+              <p class="muted">A backup is not a screenshot of your collection. It is data that a later import can restore from.</p>
+            </div>
+            <span class="mono-tag mono-tag--blue">collection-backup-2026-11-17.json</span>
+          </div>
+          <ul class="ie-manifest__grid">
+            <li class="ie-field">
+              <span class="mono-tag">01</span>
+              <h4>Card identifiers</h4>
+              <p>Which cards you own, so every entry can be found again.</p>
+            </li>
+            <li class="ie-field">
+              <span class="mono-tag">02</span>
+              <h4>Variants</h4>
+              <p>A holo copy and a standard copy stay separate entries.</p>
+            </li>
+            <li class="ie-field">
+              <span class="mono-tag">03</span>
+              <h4>Conditions</h4>
+              <p>The recorded state of each copy survives the round trip.</p>
+            </li>
+            <li class="ie-field">
+              <span class="mono-tag">04</span>
+              <h4>Quantities</h4>
+              <p>Five copies remain five copies.</p>
+            </li>
+            <li class="ie-field">
+              <span class="mono-tag">05</span>
+              <h4>Card details</h4>
+              <p>Enough information to display each entry again without guessing.</p>
+            </li>
+          </ul>
+          <p class="ie-manifest__note"><span class="icon icon--info" aria-hidden="true"></span><span>The file dialogs on this page show a JSON file as an illustration. The backup is not meant to be opened and edited by hand.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--teal" id="importing">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="ie-kicker">Write in · replaces after confirmation</p>
+            <h2>Importing a collection</h2>
+            <p>An import reads a backup file and puts that collection back into Binderly. This is the half that changes your data, so the steps below are careful about the confirmation.</p>
+          </div>
+          <span class="status status--planned" data-feature-status="importExport">Planned</span>
+        </div>
+
+        <ol class="steps steps--checklist">
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Open Import</h3>
+              <p>Open the <strong>Import / export</strong> screen and choose <strong>Import a collection backup</strong>. The import begins inside Binderly; you do not need to double-click the backup file in your file manager.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Choose the import action</p>
+                <ul class="ie-actions">
+                  <li>
+                    <span class="ie-actions__icon" aria-hidden="true"><span class="icon icon--save"></span></span>
+                    <span>Export collection</span>
+                  </li>
+                  <li class="is-current">
+                    <span class="ie-actions__icon" aria-hidden="true"><span class="icon icon--transfer"></span></span>
+                    <span>Import a collection backup</span>
+                    <span class="mono-tag mono-tag--teal">This one</span>
+                  </li>
+                </ul>
+                <p class="ie-mini__note">Starting from inside Binderly is the intended route. The backup file does not need to be opened directly.</p>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Select an existing backup using the file picker</h3>
+              <p>Choose the button that opens a file picker, then find a backup you exported earlier. This is your operating system's open dialog, so it may look different from the placeholder below. If it offers a file type filter, choose the Binderly backup type.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/import-file-dialog.svg" alt="Placeholder operating system dialog titled Open collection backup, with collection-backup-2026-11-17.json selected in Documents, and Cancel and Open backup buttons." width="1400" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — selecting an existing backup in a system open dialog.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Review the import information</h3>
+              <p>Before changing anything, Binderly reads the file and shows what it found. Check the filename and export date against the backup you meant to use. Wrong file, wrong collection — this is the point to stop.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">The summary should show</p>
+                <dl class="ie-passport">
+                  <div>
+                    <dt>Filename</dt>
+                    <dd class="ie-passport__file">collection-backup-2026-11-17.json</dd>
+                  </div>
+                  <div>
+                    <dt>Export date</dt>
+                    <dd>17 November 2026</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd><span class="mono-tag mono-tag--teal">Valid backup</span></dd>
+                  </div>
+                </dl>
+                <p class="ie-mini__note">Wrong filename or wrong date? Stop here — nothing has been changed yet.</p>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>See how many collection entries the file contains</h3>
+              <p>The summary should say how many collection entries the backup holds, and may also show how many physical cards those entries represent. The placeholder uses 248 entries and 312 physical cards as an example. A count that looks wrong is a reason to cancel.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/import-interface.svg" alt="Placeholder mockup of the Binderly Import / export screen, with an Import a collection backup panel showing a selected file, 248 entries, a valid backup label, and a warning that the current collection will be replaced." width="1600" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — the intended import summary, including the entry count.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Read the warning that the existing collection will be replaced</h3>
+              <p>The confirmation should state plainly that your current collection will be replaced by the collection in the file. If you have not exported your existing collection yet, cancel and do that first.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/import-confirm-dialog.svg" alt="Placeholder dialog mockup titled Replace your current collection? showing the selected backup, 248 collection entries and 312 physical cards, a notice that the current collection will be replaced, and Cancel and Replace collection buttons." width="1600" height="1000">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — the replacement warning before an import is confirmed.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Confirm</h3>
+              <p>Choose the replace button only after reading the warning. If you cancel or close the dialog, nothing is imported and the current collection remains as it was.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini ie-mini--danger">
+                <p class="ie-mini__label">Two buttons, two outcomes</p>
+                <ul class="ie-outcomes">
+                  <li class="ie-outcome ie-outcome--safe">
+                    <span class="ie-outcome__icon" aria-hidden="true">×</span>
+                    <div>
+                      <strong>Cancel</strong>
+                      <span>The current collection stays exactly as it is.</span>
+                    </div>
+                  </li>
+                  <li class="ie-outcome ie-outcome--danger">
+                    <span class="ie-outcome__icon" aria-hidden="true"><span class="icon icon--warning"></span></span>
+                    <div>
+                      <strong>Replace collection</strong>
+                      <span>The file's collection replaces the one in Binderly.</span>
+                    </div>
+                  </li>
+                </ul>
+                <p class="ie-mini__note">Read the warning first. The replace button is the irreversible part.</p>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>View the restored collection</h3>
+              <p>Binderly should return to the collection view, now showing the entries from the backup. Open a few entries and check their variants, conditions, and quantities. If something looks wrong, the export you made before importing is the way back.</p>
+            </div>
+            <div class="step__media">
+              <div class="ie-mini">
+                <p class="ie-mini__label">Spot-check after import</p>
+                <ul class="checklist-grid ie-checks">
+                  <li>Variants are recorded correctly</li>
+                  <li>Conditions match the backup</li>
+                  <li>Quantities still add up</li>
+                  <li>Entries you expected are present</li>
+                </ul>
+                <p class="ie-mini__note">Something wrong? Import the backup you exported before this one.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="ie-preflight mt-6">
+          <div class="ie-preflight__head">
+            <span class="ie-preflight__badge" aria-hidden="true"><span class="icon icon--shield"></span></span>
+            <div>
+              <p class="ie-kicker">Pre-import check</p>
+              <h3>Four answers that should all be “yes”</h3>
+            </div>
+          </div>
+          <ul class="checklist-grid">
+            <li>Have you exported the collection currently in Binderly?</li>
+            <li>Does the filename match the backup you meant to use?</li>
+            <li>Does the entry count look right for your collection?</li>
+            <li>Is a copy of the backup stored somewhere else too?</li>
+          </ul>
+          <p class="ie-preflight__note"><strong>Any “no” is a reason to cancel.</strong> Cancelling leaves the current collection unchanged.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--peach" id="warnings">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="ie-kicker">Read before you import</p>
+            <h2>Important warnings</h2>
+            <p>One rule matters more than the rest. The four below it are how you stay safe around it.</p>
+          </div>
+        </div>
+
+        <div class="panel panel--danger ie-alert">
+          <p class="ie-alert__flag"><span class="mono-tag mono-tag--red">The one rule</span></p>
+          <h3 class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>Importing replaces the current collection</h3>
+          <p>After you confirm, the collection in Binderly is intended to be replaced by the collection in the backup. Entries that are not in the file are not kept alongside it.</p>
+          <div class="ie-swap">
+            <div class="ie-swap__side">
+              <span class="ie-swap__label">Before</span>
+              <strong>Your current collection</strong>
+              <span class="ie-swap__meta">Whatever Binderly holds now</span>
+            </div>
+            <span class="ie-swap__arrow" aria-hidden="true">→</span>
+            <div class="ie-swap__side ie-swap__side--file">
+              <span class="ie-swap__label">After confirming</span>
+              <strong>The collection in the backup</strong>
+              <span class="ie-swap__meta">Only the entries in the file</span>
+            </div>
+          </div>
+          <p class="ie-alert__foot"><span class="icon icon--warning" aria-hidden="true"></span><span><strong>No in-app undo.</strong> The export you make first is the way back.</span></p>
+        </div>
+
+        <div class="grid grid--2 ie-rules">
+          <article class="ie-rule ie-rule--yellow">
+            <p class="ie-rule__flag"><span class="mono-tag mono-tag--yellow">Rule 01</span></p>
+            <h3><span class="icon icon--save" aria-hidden="true"></span>Export your existing collection first</h3>
+            <p>If the collection in Binderly matters to you, export it before you import. That export is the straightforward way back if the imported file turns out to be the wrong one.</p>
+          </article>
+          <article class="ie-rule ie-rule--blue">
+            <p class="ie-rule__flag"><span class="mono-tag mono-tag--blue">Rule 02</span></p>
+            <h3><span class="icon icon--shield" aria-hidden="true"></span>An invalid file should change nothing</h3>
+            <p>If the file is not a valid Binderly backup, the import should stop and leave the current collection untouched. A failed import is not a reason to assume your collection was changed, but check it before trying again.</p>
+          </article>
+          <article class="ie-rule ie-rule--teal">
+            <p class="ie-rule__flag"><span class="mono-tag mono-tag--teal">Rule 03</span></p>
+            <h3><span class="icon icon--check" aria-hidden="true"></span>Cancelling leaves the collection unchanged</h3>
+            <p>Closing the confirmation, or cancelling the file picker, should leave the existing collection exactly as it was. Cancelling an import is safe.</p>
+          </article>
+          <article class="ie-rule ie-rule--lilac">
+            <p class="ie-rule__flag"><span class="mono-tag">Rule 04</span></p>
+            <h3><span class="icon icon--layers" aria-hidden="true"></span>Merging collections is not guaranteed</h3>
+            <p>Merging is planned but not guaranteed. Do not plan on an import combining two collections; plan on it replacing one with the other.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-deep" id="why-backups-matter">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div class="section-head__text">
+            <h2>Why backups matter</h2>
+            <p>A backup file is boring right up to the moment it is the only copy of your collection.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--tint-blue">
+            <p><span class="feature-card__icon" aria-hidden="true"><span class="icon icon--shield" aria-hidden="true"></span></span></p>
+            <h3>Recovering records</h3>
+            <p>Cards get moved, a binder gets rearranged, or a session ends unexpectedly. A backup holds the record you had when you exported it, so a mistake can be repaired by importing that record again.</p>
+          </article>
+          <article class="card card--tint-teal">
+            <p><span class="feature-card__icon" aria-hidden="true"><span class="icon icon--laptop" aria-hidden="true"></span></span></p>
+            <h3>Moving to another device</h3>
+            <p>If you later use Binderly on another computer, a backup is the intended way to carry the collection across. The supported systems for the first release are not confirmed yet, so check the Download page before planning a move.</p>
+          </article>
+          <article class="card card--tint-yellow">
+            <p><span class="feature-card__icon" aria-hidden="true"><span class="icon icon--layers" aria-hidden="true"></span></span></p>
+            <h3>Keeping a safety copy</h3>
+            <p>Store the file somewhere that is not the only copy of anything — an external drive, or a folder your normal backups already include. One extra copy turns a lost collection into an afternoon's work instead of a permanent loss.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Import &amp; export questions</h2>
+            <p>Short answers, limited to what the project plan describes.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Does importing merge two collections or replace the current one?</summary>
+            <div>
+              <p>Importing is planned to <strong>replace</strong> the current collection after you confirm. Merging is listed as a planned feature and is not guaranteed in the current plan, so do not rely on an import to combine collections. Export the current collection first if you want to keep it.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>What happens if I cancel an import?</summary>
+            <div>
+              <p>Cancelling the file picker or the replacement confirmation should leave your existing collection exactly as it was. Nothing is imported until you confirm, so cancelling is the safe choice when you are unsure.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Can I open a backup file and read it myself?</summary>
+            <div>
+              <p>A backup is intended to be restored by Binderly, not browsed as a document. The file is not promised to be readable or useful in other software, and this guide does not treat it as an editable list of cards. The file dialogs on this page show JSON as an illustration of a file type, not as a promise about what you will find inside.</p>
+            </div>
+          </details>
+        </div>
+
+        <nav class="page-nav mt-6" aria-label="Guide pages">
+          <a href="statistics.html">
+            <span>Previous guide</span>
+            <strong>Collection statistics</strong>
+          </a>
+          <a href="download.html">
+            <span>Next guide</span>
+            <strong>Download</strong>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Feature labels reflect the project plan; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>

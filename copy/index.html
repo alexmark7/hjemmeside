@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binderly — a collector’s home for your Pokémon cards</title>
+  <meta name="description" content="A small desktop app for keeping track of the Pokémon cards you own: every print, condition, and duplicate in one local collection. Built for collectors, not resellers.">
+  <meta name="theme-color" content="#f6f2e9">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Binderly — a collector’s home for your Pokémon cards">
+  <meta property="og:description" content="Keep track of the cards you own without turning collecting into a spreadsheet.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">Your Pokémon collection, <span class="marker">properly kept.</span></h1>
+          <p class="hero__lede">Binderly is a private desktop record of the cards you actually own — every print, condition, and duplicate kept in one local binder. No account, no marketplace, no guesswork.</p>
+          <div class="hero__badges">
+            <span class="mono-tag mono-tag--teal">LOCAL-FIRST</span>
+            <span class="mono-tag">SINGLE USER</span>
+            <span class="mono-tag mono-tag--yellow">NO ACCOUNT</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--primary btn--large" href="features.html">See what it does</a>
+            <a class="btn btn--ghost btn--large" href="download.html" data-download-cta data-download-label="Download">Download</a>
+          </div>
+          <p class="hero__note">The first release isn’t published yet. The <a href="download.html">download page</a> explains what’s ready.</p>
+        </div>
+
+        <div class="hero-studio">
+          <div class="hero-studio__binder" aria-hidden="true">
+            <div class="binder-showcase">
+              <span class="binder__label">A page from your binder</span>
+              <div class="binder-showcase__page">
+                <div class="binder-showcase__slot"><img src="assets/img/placeholders/card-charizard.svg" alt="" width="600" height="840"></div>
+                <div class="binder-showcase__slot"><img src="assets/img/placeholders/card-pikachu.svg" alt="" width="600" height="840"></div>
+                <div class="binder-showcase__slot"><img src="assets/img/placeholders/card-blastoise.svg" alt="" width="600" height="840"></div>
+                <div class="binder-showcase__slot"><img src="assets/img/placeholders/card-venusaur.svg" alt="" width="600" height="840"></div>
+                <div class="binder-showcase__slot"><img src="assets/img/placeholders/card-gengar.svg" alt="" width="600" height="840"></div>
+                <div class="binder-showcase__slot binder-showcase__slot--empty"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-studio__device">
+            <div class="device">
+              <div class="device__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <span class="device__title">Binderly — My collection</span>
+              </div>
+              <img class="device__screen" src="assets/img/placeholders/hero-app-preview.svg" alt="Placeholder mockup of the Binderly collection screen showing a grid of cards and a details panel." width="1600" height="900">
+            </div>
+          </div>
+
+          <div class="hero-studio__docket" aria-hidden="true">
+            <span class="mono-tag mono-tag--yellow">BINDER 001</span>
+            <span class="mono-tag mono-tag--blue">BASE SET · 004/102</span>
+            <span class="mono-tag mono-tag--teal">SAVED LOCALLY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="why" aria-labelledby="why-title">
+      <div class="container split">
+        <div class="split__copy">
+          <div class="kicker">
+            <span class="mono-tag mono-tag--red">THE SHOEBOX &amp; BINDER PROBLEM · 001</span>
+          </div>
+          <h2 id="why-title">The binder remembers the cards. It doesn’t remember the details.</h2>
+          <p class="lead">At a swap table, a Base Set Charizard is in front of you and another collector asks whether you already have one. You know you do. But which one?</p>
+          <p>Is your <span class="mono-tag mono-tag--blue">004/102</span> Charizard the Standard print or the Holo? Near Mint, or the one with the soft corner and the crease by the flame? And is it in the binder, the deck box, or the tin under the bed?</p>
+          <p>At home it’s the same question in reverse. You open the binder to count your Pikachus and find three possible stacks: the trade tin, the pocket page you “definitely reorganised,” and a deck box with no label. The cards were never the problem. Keeping the details in your head was.</p>
+          <div class="card card--outline mt-6">
+            <div class="kicker">
+              <span class="mono-tag">THE QUESTIONS IN YOUR HEAD</span>
+            </div>
+            <h3>Which copy is mine?</h3>
+            <ul class="detail-list">
+              <li><span class="mono-tag mono-tag--blue">004/102</span> Charizard — Standard or Holo?</li>
+              <li><span class="mono-tag mono-tag--teal">CONDITION</span> Near Mint or Played?</li>
+              <li><span class="mono-tag mono-tag--yellow">025/102</span> Pikachu — how many copies, and in which tin?</li>
+              <li><span class="mono-tag">LOCATION</span> Binder, deck box, or shoebox?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="split__media">
+          <figure class="shot shot--outline">
+            <img class="shot__img" src="assets/img/placeholders/binder-overflow.svg" alt="Placeholder illustration of cards spilling out of tins and boxes, with a speech bubble saying ‘I know I have it somewhere’." width="1200" height="800">
+            <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder illustration — the shoebox knows, even when you don’t.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-deep" id="what-it-does" aria-labelledby="what-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--blue">THE SYSTEM · 002</span>
+            </div>
+            <h2 id="what-title">The catalogue knows the card. Your collection knows your copy.</h2>
+            <p>Binderly keeps the reference shelf and your personal binder separate — so “Charizard” and “my Charizard” can finally mean different things.</p>
+          </div>
+        </div>
+
+        <div class="comparison-split">
+          <div class="comparison-split__col comparison-split__col--muted">
+            <p class="comparison-split__head"><span>Reference catalogue</span><span class="mono-tag mono-tag--blue">What exists</span></p>
+            <h3>The card library.</h3>
+            <p>A reference shelf of card definitions: the name, set, collector number, category, and the details printed on the card. It answers “What is this card?” — never “Do I own it?”</p>
+            <dl class="spec-list">
+              <dt>Name</dt>
+              <dd>The name printed on the card.</dd>
+              <dt>Set &amp; number</dt>
+              <dd>The expansion and collector number that tell two similar prints apart.</dd>
+              <dt>Card facts</dt>
+              <dd>Category, Pokémon type, evolution stage, HP, and retreat cost when they apply.</dd>
+            </dl>
+            <div class="mono-row mt-6">
+              <span class="mono-tag">BASE SET</span>
+              <span class="mono-tag mono-tag--blue">004/102</span>
+              <span class="mono-tag">FIRE</span>
+              <span class="mono-tag">STAGE 2</span>
+            </div>
+            <p class="muted mt-6">Read-only reference. Browsing the catalogue does not add a card to your collection.</p>
+          </div>
+
+          <div class="comparison-split__col">
+            <p class="comparison-split__head"><span>Your collection</span><span class="mono-tag mono-tag--teal">What you own</span></p>
+            <h3>The copy ledger.</h3>
+            <p>Every physical copy gets an entry. If two Charizards differ by finish or wear, they are two entries; if they are identical, the quantity goes up. It answers “Which copy is in my binder, and how many?”</p>
+            <dl class="spec-list">
+              <dt>Variant</dt>
+              <dd>The finish in your hand — Standard, Holo, Reverse Holo, or another listed print.</dd>
+              <dt>Condition</dt>
+              <dd>The physical state of that copy, from Mint down to Damaged.</dd>
+              <dt>Quantity</dt>
+              <dd>The number of identical copies behind one entry, not the size of the whole collection.</dd>
+            </dl>
+            <div class="card card--tint-blue mt-6">
+              <div class="mono-row">
+                <span class="mono-tag mono-tag--blue">004/102</span>
+                <span class="mono-tag mono-tag--yellow">HOLO</span>
+                <span class="mono-tag mono-tag--teal">NEAR MINT</span>
+                <span class="mono-tag">QTY 1</span>
+              </div>
+              <p class="mt-6"><strong>Charizard</strong> — one physical copy, recorded as its own entry.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid--2 mt-6">
+          <div class="card">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--teal">IN THE APP</span>
+            </div>
+            <h3>Core tools</h3>
+            <ul class="checklist-grid">
+              <li>A separate entry for each physical copy.</li>
+              <li>Variant and condition recorded per copy.</li>
+              <li>Quantity that grows instead of duplicating.</li>
+              <li>Search by card name or collector number.</li>
+              <li>Sort and filter your own collection.</li>
+              <li>Card details when they apply.</li>
+              <li>Changes saved locally between sessions.</li>
+              <li>No account and no marketplace.</li>
+            </ul>
+          </div>
+
+          <div class="card card--tint-yellow">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--yellow">ON THE WORKBENCH</span>
+            </div>
+            <h3>Planned, not promised</h3>
+            <p>These are designed and documented, but they are not part of the current build.</p>
+            <ul class="detail-list">
+              <li><strong>Import &amp; export.</strong> A portable backup and a way back in. <span class="status status--planned" data-feature-status="importExport">Planned</span></li>
+              <li><strong>Collection statistics.</strong> Set completion and breakdowns once the data is ready. <span class="status status--planned" data-feature-status="statistics">Planned</span></li>
+              <li><strong>Manual card entry.</strong> Add a card the catalogue does not list. <span class="status status--planned" data-feature-status="manualCards">Planned</span></li>
+              <li><strong>Local card images.</strong> Keep a picture beside the record. <span class="status status--planned" data-feature-status="localImages">Planned</span></li>
+            </ul>
+            <p class="mt-6"><a class="text-link" href="features.html">See the full feature status</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div class="section-head__text">
+            <div class="kicker kicker--center">
+              <span class="mono-tag mono-tag--teal">THE WORKFLOW · 003</span>
+            </div>
+            <h2 id="how-title">Three moves from “I have it” to “here it is.”</h2>
+            <p>No setup marathon. Look the card up, record the copy in your hand, and find it again without emptying every tin.</p>
+          </div>
+        </div>
+
+        <ol class="workflow-strip">
+          <li>
+            <h3>Find in catalogue</h3>
+            <p>Search by name or collector number. The catalogue shows the card that exists — not yet what you own.</p>
+          </li>
+          <li>
+            <h3>Record variant, condition &amp; quantity</h3>
+            <p>Match the physical copy: finish, wear, and how many identical copies sit in the binder.</p>
+          </li>
+          <li>
+            <h3>Search, sort &amp; filter locally</h3>
+            <p>Retrieve the entry without opening every box. Everything is searched and sorted on your computer.</p>
+          </li>
+        </ol>
+
+        <div class="grid grid--3 mt-6">
+          <figure class="shot">
+            <img class="shot__img" src="assets/img/placeholders/first-card-search.svg" alt="Placeholder screenshot of the card catalogue with a search field and matching cards." width="1600" height="900">
+            <figcaption class="shot__caption"><span class="mono-tag">01</span><span>Catalogue search — find by name or number.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="shot__img" src="assets/img/placeholders/add-card-dialog.svg" alt="Placeholder screenshot of the add-card dialog with variant, condition, and quantity fields." width="1600" height="1000">
+            <figcaption class="shot__caption"><span class="mono-tag">02</span><span>Record the copy — variant, condition, quantity.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="shot__img" src="assets/img/placeholders/collection-dashboard.svg" alt="Placeholder screenshot of the collection dashboard with card tiles and a details panel." width="1600" height="900">
+            <figcaption class="shot__caption"><span class="mono-tag">03</span><span>Your collection — sorted, filtered, and local.</span></figcaption>
+          </figure>
+        </div>
+
+        <p class="center mt-6"><a class="text-link" href="getting-started.html">Read the full getting-started guide</a></p>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="made-for-collectors" aria-labelledby="collectors-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--yellow">THE PHILOSOPHY · 004</span>
+            </div>
+            <h2 id="collectors-title">Made for collectors, not resellers.</h2>
+            <p>Binderly is a student project for people who like the collecting part: the hunt, the binder, the duplicate you forgot you had. It doesn’t buy, sell, trade, or price cards. It’s just a place to keep track of what you own.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--teal">FOR THE COLLECTOR</span>
+            </div>
+            <h3>A place for the part you enjoy.</h3>
+            <ul class="checklist-grid">
+              <li>Organising the binder you already have.</li>
+              <li>Finding a card without emptying three tins.</li>
+              <li>Remembering variants, conditions, and quantities.</li>
+              <li>Keeping a private record on your own machine.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--red">NOT A MARKETPLACE</span>
+            </div>
+            <h3>No prices. No pressure.</h3>
+            <ul class="detail-list">
+              <li><strong>No prices or valuations.</strong> Binderly never guesses what a card is worth.</li>
+              <li><strong>No buying, selling, or trading.</strong> It is not a shop, auction, or trade board.</li>
+              <li><strong>No accounts or social feeds.</strong> There is no profile to maintain and no audience to perform for.</li>
+              <li><strong>No portfolio dashboard.</strong> The collection is not an investment to optimise.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="manifesto-line">The collection is the point. <span>Everything else is admin.</span></p>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="guide-index" aria-labelledby="index-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <div class="kicker">
+              <span class="mono-tag mono-tag--yellow">THE INDEX · 005</span>
+            </div>
+            <h2 id="index-title">Have a look around the studio.</h2>
+            <p>Seven ways into the binder — from your first card to the project behind it. Start anywhere; the catalogue will still be here when you get back.</p>
+          </div>
+        </div>
+
+        <ul class="bento-grid">
+          <li class="bento-item--wide">
+            <a class="card card--tint-blue index-card" href="getting-started.html">
+              <span class="mono-tag mono-tag--blue">01 · START HERE</span>
+              <h3>Getting started</h3>
+              <p>Download, launch, and record your first physical copy without turning it into a setup project.</p>
+              <span class="text-link">Open the guide</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="features.html">
+              <span class="mono-tag">02 · APP TOUR</span>
+              <h3>Features</h3>
+              <p>A guided tour of the catalogue, collection, card details, and editing.</p>
+              <span class="text-link">Take the tour</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="managing-your-collection.html">
+              <span class="mono-tag">03 · CORE GUIDE</span>
+              <h3>Managing your collection</h3>
+              <p>Choose variants and conditions, count copies, and edit entries later.</p>
+              <span class="text-link">Open the guide</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="search-sort-filter.html">
+              <span class="mono-tag mono-tag--teal">04 · DEMO</span>
+              <h3>Search, sort &amp; filter</h3>
+              <p>Try the interactive sample collection and see how the controls behave.</p>
+              <span class="text-link">Try the demo</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="statistics.html">
+              <span class="mono-tag mono-tag--yellow">05 · PLANNED</span>
+              <h3>Collection statistics</h3>
+              <p>The summary figures and charts that are still on the workbench.</p>
+              <span class="text-link">See the plans</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="import-export.html">
+              <span class="mono-tag mono-tag--yellow">06 · PLANNED</span>
+              <h3>Import &amp; export</h3>
+              <p>The intended backup and move-to-a-new-computer workflow.</p>
+              <span class="text-link">Read the workflow</span>
+            </a>
+          </li>
+          <li>
+            <a class="card index-card" href="about.html">
+              <span class="mono-tag">07 · PROJECT</span>
+              <h3>About the project</h3>
+              <p>The SEP1 brief, the team, and the choices behind Binderly.</p>
+              <span class="text-link">Meet the project</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="muted mt-6">The first public release isn’t published yet. <a href="download.html">Check the download page</a> for the latest status.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Planned features are labelled; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>

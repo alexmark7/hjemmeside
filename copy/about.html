@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binderly — About the project</title>
+  <meta name="description" content="The SEP1 software engineering case study behind Binderly: the collector problem, product philosophy, confirmed technical boundaries, the four-person team, and the feature roadmap.">
+  <meta name="theme-color" content="#fff7e6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Binderly — About the project">
+  <meta property="og:description" content="The SEP1 case study behind Binderly: the collector problem, product philosophy, confirmed technical boundaries, the team, and the feature roadmap.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/about.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--lavender" aria-labelledby="about-title">
+      <div class="container page-hero__inner">
+        <div>
+          <p class="tab-label">SEP1 case study</p>
+          <h1 id="about-title">About the project.</h1>
+          <p class="lead">Binderly is a SEP1 student software engineering project about keeping track of the cards you own — a local Java desktop app built by a small team, for collectors.</p>
+          <p class="hero__note">This page is the public work log: the problem, the decisions, the technical boundaries, and what is still open.</p>
+        </div>
+      </div>
+      <div class="container">
+        <dl class="stat-banner project-meta" aria-label="SEP1 project summary">
+          <div class="project-meta__item">
+            <dt>Course</dt>
+            <dd>SEP1 Software Engineering Project</dd>
+          </div>
+          <div class="project-meta__item">
+            <dt>Architecture</dt>
+            <dd>Local Java desktop app</dd>
+          </div>
+          <div class="project-meta__item">
+            <dt>Scope</dt>
+            <dd>Single-user physical card binder</dd>
+          </div>
+          <div class="project-meta__item">
+            <dt>Status</dt>
+            <dd><span class="status status--partial">v0.1.0 · In development</span></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="introduction">
+      <div class="container">
+        <div class="split split--media-wide">
+          <div class="split__copy">
+            <p class="about-kicker">01 · The collector problem</p>
+            <h2>It started with a binder that stopped making sense.</h2>
+            <p>Binderly came out of a broad SEP1 brief: work as a small team, gather requirements, design an application, build it, and test it. Choosing the problem was up to us, so we picked one we could describe from the inside.</p>
+            <p>Collections do not get out of hand all at once. A binder fills, a shoebox appears, then a second box of doubles. Variants and conditions multiply the record-keeping: the same card can sit in a collection three times and still be three different things.</p>
+            <div class="stack stack--tight">
+              <p>Somewhere in the middle of that, the questions get small and constant:</p>
+              <ul>
+                <li>Is this a card I already own, or a variant I do not have?</li>
+                <li>How many copies are actually in the binder?</li>
+                <li>Which copy is in the best condition?</li>
+                <li>Which numbers am I still missing from this set?</li>
+                <li>Where did that card go?</li>
+              </ul>
+            </div>
+            <p>Binderly's answer is a digital binder that mirrors the physical one. Every entry names the card, its variant, its condition, and how many copies you own, and every entry can be found by name or card number.</p>
+          </div>
+          <div class="split__media">
+            <figure class="shot shot--outline">
+              <img class="shot__img" src="assets/img/placeholders/development-process.svg" alt="Placeholder illustration titled 'How the project was built', showing four stages: plan the requirements, design the architecture and interface, build the Java application and this website, then test and fix." width="1200" height="800">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder process illustration — four stages, repeated in loops rather than one long handoff.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="about-process">
+          <div class="about-process__head">
+            <h3>The SEP1 process, in four passes.</h3>
+            <p>Requirements → Architecture &amp; UI → Implementation → Verification. Each pass produced something the next one could check, and findings sent the team back a step.</p>
+          </div>
+          <ol class="workflow-strip" aria-label="Four-stage SEP1 engineering process">
+            <li>
+              <h4>Requirements</h4>
+              <p>Collector interviews, scope, priorities, and the feature-status list that keeps “planned” separate from “in the app”.</p>
+            </li>
+            <li>
+              <h4>Architecture &amp; UI</h4>
+              <p>A catalogue-versus-collection data model, screen flows, and the visual language used by the app and this website.</p>
+            </li>
+            <li>
+              <h4>Implementation</h4>
+              <p>The Java application, local storage, and this static project site — kept small enough for one team to finish and explain.</p>
+            </li>
+            <li>
+              <h4>Verification</h4>
+              <p>Feature checks against the brief, an accessibility pass, defect notes, and the guides that document the intended workflow.</p>
+            </li>
+          </ol>
+          <p class="about-process__note"><span class="icon icon--info" aria-hidden="true"></span><span>The four stages ran as short loops. A test failure could send the team back to requirements; a new requirement could change the interface.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--teal" id="philosophy">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="about-kicker">02 · Product philosophy</p>
+            <h2>Collecting is the point, not the price tag.</h2>
+            <p>Binderly is a tool for organising a collection you already enjoy. It is deliberately not a tool for turning that collection into an investment.</p>
+          </div>
+        </div>
+
+        <p class="lead">Think about the table after a swap with a friend: a small stack of new cards, two of them doubles, one a variant you already own in worse condition. The job is to get them into the binder accurately — not to work out what they might be worth.</p>
+
+        <div class="comparison-split about-compare">
+          <section class="comparison-split__col" aria-labelledby="philosophy-built-for">
+            <p class="comparison-split__head">
+              <span>Built for</span>
+              <span class="mono-tag mono-tag--teal">In scope</span>
+            </p>
+            <h3 id="philosophy-built-for">One accurate record of the cards you own.</h3>
+            <ul class="about-list about-list--check">
+              <li>Knowing exactly which cards you own, and how many copies of each.</li>
+              <li>Keeping variants and conditions apart, so a holo copy is never confused with the standard print.</li>
+              <li>Finding a specific card in seconds instead of flipping through binders.</li>
+              <li>Seeing which cards are still missing from a set you are collecting.</li>
+            </ul>
+          </section>
+          <section class="comparison-split__col comparison-split__col--muted" aria-labelledby="philosophy-left-out">
+            <p class="comparison-split__head">
+              <span>Deliberately left out</span>
+              <span class="mono-tag mono-tag--red">Out of scope</span>
+            </p>
+            <h3 id="philosophy-left-out">A marketplace, a price guide, a social network.</h3>
+            <ul class="about-list about-list--omit">
+              <li>No marketplace: no listings, offers, trades, or sales.</li>
+              <li>No price tracking, valuations, or investment charts.</li>
+              <li>No social feed, follower counts, or sharing prompts.</li>
+              <li>No accounts, no sign-in, and no cloud sync.</li>
+            </ul>
+          </section>
+        </div>
+
+        <figure class="about-principle">
+          <blockquote>
+            <p>“If a feature only makes sense to someone trying to make money from cards, it does not belong in Binderly.”</p>
+          </blockquote>
+          <figcaption>The rule the team kept coming back to</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="about-kicker">03 · Technical architecture</p>
+            <h2>A Java desktop application, kept deliberately small.</h2>
+            <p>The application is a program on your computer, not a website you sign into. That keeps the project small: one person, one local collection, and no server in the middle.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card card--tint-blue about-spec" aria-labelledby="tech-confirmed">
+            <div class="about-spec__head">
+              <span class="mono-tag mono-tag--teal"><span class="icon icon--check" aria-hidden="true"></span>Confirmed</span>
+              <span class="about-spec__count">5 statements</span>
+            </div>
+            <h3 id="tech-confirmed">What we can state today.</h3>
+            <dl class="spec-list">
+              <dt>Platform</dt>
+              <dd>A Java desktop application.</dd>
+              <dt>Where it runs</dt>
+              <dd>Locally, on the computer where the application runs.</dd>
+              <dt>Storage</dt>
+              <dd>Collection data is saved locally on that computer.</dd>
+              <dt>Users</dt>
+              <dd>Single-user: one person and one local collection, with no shared accounts.</dd>
+              <dt>Backend</dt>
+              <dd>None. No server, no online account, and no sign-in.</dd>
+            </dl>
+            <p class="about-spec__note">These points come from the project brief and define the boundary the team is building inside.</p>
+          </article>
+
+          <article class="card card--outline about-spec" aria-labelledby="tech-open">
+            <div class="about-spec__head">
+              <span class="mono-tag mono-tag--yellow"><span class="icon icon--info" aria-hidden="true"></span>To be confirmed</span>
+              <span class="about-spec__count">5 open questions</span>
+            </div>
+            <h3 id="tech-open">What the team has not fixed yet.</h3>
+            <dl class="spec-list">
+              <dt>Interface framework</dt>
+              <dd>Whether the interface is built with JavaFX, Swing, or another toolkit is not confirmed for publication yet.</dd>
+              <dt>Architecture</dt>
+              <dd>How catalogue data and collection records are separated internally still has to be written up here.</dd>
+              <dt>Java version</dt>
+              <dd>The exact Java version required by the first release is not confirmed.</dd>
+              <dt>Release format</dt>
+              <dd>Installer, packaged application, or another format — not decided for publication.</dd>
+              <dt>Supported systems</dt>
+              <dd>Operating systems and system requirements will be listed on the Download page once confirmed.</dd>
+            </dl>
+            <p class="about-spec__note">Left open on purpose: this page will be updated when the team confirms each detail, rather than guessed at in advance.</p>
+          </article>
+        </div>
+
+        <p class="panel panel--info mt-6"><span class="icon icon--info" aria-hidden="true"></span> Only confirmed details are described on this page. The interface framework, internal architecture, Java version, release format, and supported systems will be added here once the team has confirmed them.</p>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="team">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="about-kicker">04 · The team</p>
+            <h2>Four areas of work, one small team.</h2>
+            <p>The project is split into four areas of responsibility, from planning and requirements through to testing and documentation.</p>
+          </div>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="assets/img/placeholders/team-avatar-1.svg" alt="Placeholder role emblem for the project lead and binder architect, with the initials PL." width="500" height="500">
+            <h3>Team member one</h3>
+            <p class="team-card__role">Project lead · requirements</p>
+            <p>Owns the plan and the requirements: keeps the scope realistic, records the team's decisions, and checks that each feature traces back to something a collector would actually use.</p>
+            <ul class="inline-list team-card__tags" aria-label="Project lead focus areas">
+              <li><span class="mono-tag">Scope</span></li>
+              <li><span class="mono-tag">Decisions</span></li>
+              <li><span class="mono-tag">Traceability</span></li>
+            </ul>
+          </article>
+
+          <article class="team-card">
+            <img src="assets/img/placeholders/team-avatar-2.svg" alt="Placeholder role emblem for the Java core engineer, with the initials JE." width="500" height="500">
+            <h3>Team member two</h3>
+            <p class="team-card__role">Java application developer</p>
+            <p>Responsible for the desktop application: the card catalogue, the collection records, search, sorting, filtering, and saving to local storage.</p>
+            <ul class="inline-list team-card__tags" aria-label="Java developer focus areas">
+              <li><span class="mono-tag">Catalogue</span></li>
+              <li><span class="mono-tag">Collection records</span></li>
+              <li><span class="mono-tag">Local saving</span></li>
+            </ul>
+          </article>
+
+          <article class="team-card">
+            <img src="assets/img/placeholders/team-avatar-3.svg" alt="Placeholder role emblem for the UI and frontend designer, with the initials UI." width="500" height="500">
+            <h3>Team member three</h3>
+            <p class="team-card__role">UI &amp; front-end developer</p>
+            <p>Shapes the desktop interface and this website: layout, readable type, keyboard-friendly controls, and the placeholder visual system that stands in for screenshots.</p>
+            <ul class="inline-list team-card__tags" aria-label="UI and front-end focus areas">
+              <li><span class="mono-tag">Interface</span></li>
+              <li><span class="mono-tag">Accessibility</span></li>
+              <li><span class="mono-tag">Website</span></li>
+            </ul>
+          </article>
+
+          <article class="team-card">
+            <img src="assets/img/placeholders/team-avatar-4.svg" alt="Placeholder role emblem for the QA and documentation specialist, with the initials QA." width="500" height="500">
+            <h3>Team member four</h3>
+            <p class="team-card__role">QA &amp; documentation</p>
+            <p>Tests each feature against the requirements, records what fails and what gets fixed, and maintains the guides, release notes, and this page.</p>
+            <ul class="inline-list team-card__tags" aria-label="QA and documentation focus areas">
+              <li><span class="mono-tag">Test passes</span></li>
+              <li><span class="mono-tag">Defect log</span></li>
+              <li><span class="mono-tag">Guides</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="panel panel--info mt-6"><span class="icon icon--info" aria-hidden="true"></span> The names and portraits above are placeholders. They will be replaced when each team member confirms how they want to be credited; the roles, responsibilities, and tags describe the current division of work.</p>
+      </div>
+    </section>
+
+    <section class="section section--lilac" id="repository">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="about-kicker">05 · Repository</p>
+            <h2>Where the project is published.</h2>
+            <p>The public record lives in a static GitHub repository. It holds this website, not the application download — that distinction is stated plainly below.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="split__copy">
+            <p>The website you are reading is kept in a GitHub repository. It is a static site — plain HTML, CSS, and JavaScript, with no build step — so the pages can be read and checked without installing anything.</p>
+            <p>The Java application's source code and the first release file are not linked from here yet. When they are published, the links will be added to this section and to the Download page.</p>
+            <p class="btn-row"><a class="btn btn--ghost" href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project website repository</a></p>
+            <p class="panel panel--warning"><span class="icon icon--warning" aria-hidden="true"></span> That repository holds the website, not a download of the application. If you are looking for the program itself, the Download page explains what is available and when.</p>
+          </div>
+          <div class="split__media">
+            <div class="card card--outline about-repo">
+              <div class="about-repo__head">
+                <span class="mono-tag mono-tag--blue">alexmark7 / hjemmeside</span>
+                <span class="code-badge">static site</span>
+              </div>
+              <h3>Repository contents.</h3>
+              <dl class="spec-list">
+                <dt>Website pages</dt>
+                <dd>HTML pages, shared stylesheet, and site scripts. <span class="mono-tag mono-tag--teal">Published</span></dd>
+                <dt>Application source</dt>
+                <dd>Not linked from this site yet. <span class="mono-tag mono-tag--yellow">Pending</span></dd>
+                <dt>Release files</dt>
+                <dd>Not published yet. <span class="mono-tag mono-tag--yellow">Pending</span></dd>
+                <dt>Build step</dt>
+                <dd>None — the files are served as written.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="future">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <p class="about-kicker">06 · Specification roadmap</p>
+            <h2>Specified now, planned later.</h2>
+            <p>This table separates what is in the app from what is still planned. It is a specification roadmap, not a release promise.</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Feature status for Binderly v<span data-site-version>0.1.0</span>. “In the app” means the feature is described in the project plan and targeted at the first release; “Planned” means it is not part of the current build. On a narrow screen, scroll the table sideways to read the status column.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">What it covers</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" colspan="3">In the app <span class="about-table__count">8 core features</span></th>
+              </tr>
+              <tr>
+                <th scope="row">Collection records</th>
+                <td>Every copy you own, with variant, condition, and quantity kept as one entry per combination.</td>
+                <td><span class="status status--live" data-feature-status="collection">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Card catalogue</th>
+                <td>The list of cards that can be added to the collection, described by expansion, number, type, and stage.</td>
+                <td><span class="status status--live" data-feature-status="catalogue">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Card details</th>
+                <td>A detail view for a card, bringing its catalogue information and your own copies together.</td>
+                <td><span class="status status--live" data-feature-status="cardDetails">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Editing entries</th>
+                <td>Changing the quantity or condition of an entry, and removing one after a confirmation step.</td>
+                <td><span class="status status--live" data-feature-status="editing">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Search</th>
+                <td>Finding an entry by full or partial card name, or by card number.</td>
+                <td><span class="status status--live" data-feature-status="search">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sorting</th>
+                <td>Reordering the current view by name, expansion, number, HP, condition, or quantity.</td>
+                <td><span class="status status--live" data-feature-status="sorting">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Filtering</th>
+                <td>Narrowing the collection by expansion, type, stage, condition, or variant.</td>
+                <td><span class="status status--live" data-feature-status="filtering">In the app</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Local saving</th>
+                <td>Writing collection changes to storage on your own device, so they are there in the next session.</td>
+                <td><span class="status status--live" data-feature-status="localSave">In the app</span></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" colspan="3">Planned <span class="about-table__count">6 candidate features</span></th>
+              </tr>
+              <tr>
+                <th scope="row">Import &amp; export</th>
+                <td>Backing the collection up to a file and restoring it later. An import is intended to replace the current collection only after a clear confirmation.</td>
+                <td><span class="status status--planned" data-feature-status="importExport">Planned</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Local card images</th>
+                <td>Attaching your own photo of the physical card to an entry, stored on your device.</td>
+                <td><span class="status status--planned" data-feature-status="localImages">Planned</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Manual card entry</th>
+                <td>Adding a card the catalogue does not list, without waiting for the catalogue to be updated.</td>
+                <td><span class="status status--planned" data-feature-status="manualCards">Planned</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Collection statistics</th>
+                <td>Counts and charts about the collection, such as totals per expansion or per card type.</td>
+                <td><span class="status status--planned" data-feature-status="statistics">Planned</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Catalogue updates</th>
+                <td>Importing a newer catalogue file when new sets are added.</td>
+                <td><span class="status status--planned" data-feature-status="catalogueImport">Planned</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Merging entries</th>
+                <td>Combining two entries for the same card, variant, and condition into one.</td>
+                <td><span class="status status--planned" data-feature-status="merge">Planned</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="panel panel--warning mt-6"><span class="icon icon--warning" aria-hidden="true"></span> The second group is planned only. Those features are planned but are not part of the application today, and they are not promised for the first release.</p>
+        <p class="mt-6"><a class="text-link" href="download.html#release">Release status on the Download page</a></p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container container--narrow">
+        <nav class="page-nav" aria-label="Page navigation">
+          <a href="download.html">
+            <span>Previous</span>
+            <strong>Download</strong>
+          </a>
+          <a href="contact.html">
+            <span>Next</span>
+            <strong>Contact</strong>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Feature labels reflect the project plan; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Managing your collection — Binderly</title>
+  <meta name="description" content="How to add a Pokémon card in Binderly: pick the right card, variant, and condition, record how many copies you own, and manage every entry afterwards.">
+  <meta name="theme-color" content="#fff7e6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Managing your collection — Binderly">
+  <meta property="og:description" content="A beginner-friendly guide to adding cards, choosing variants and conditions, handling duplicate entries, and removing cards in Binderly.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/managing-your-collection.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--lavender">
+      <div class="container page-hero__inner">
+        <div>
+          <p class="tab-label">Guide 2 of 5</p>
+          <h1>Managing your collection.</h1>
+          <p class="lead">Every entry in Binderly answers three questions: which card, which finish, and which condition. Then it records how many copies you own. This guide walks through making that record, and keeping it true as your binder changes.</p>
+        </div>
+        <aside class="page-hero__aside">
+          <h2>In this guide</h2>
+          <nav aria-label="On this page">
+            <ul>
+              <li><a href="#adding-cards">Adding cards</a></li>
+              <li><a href="#card-variants">Card variants</a></li>
+              <li><a href="#card-conditions">Card conditions</a></li>
+              <li><a href="#managing-existing-cards">Managing existing cards</a></li>
+              <li><a href="#duplicate-handling">Duplicate handling</a></li>
+              <li><a href="#removing-cards">Removing cards</a></li>
+              <li><a href="#local-saving">Local saving</a></li>
+            </ul>
+          </nav>
+          <p class="muted">Screens on this page are clearly labelled placeholders until final application screenshots are available.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="what-an-entry-records">
+      <div class="container split split--media-wide">
+        <div class="split__copy">
+          <h2>What an entry records</h2>
+          
+          <p class="lead">Binderly keeps two things carefully apart: the catalogue of cards that exist, and your collection of the copies you actually own.</p>
+          <p>The catalogue supplies the facts — the name, the set, the collector number, and the variants in which that print exists. Your collection supplies the personal part: which of those prints is in your binder, how it has held up, and how many copies you have.</p>
+          <p>That is why adding a card always follows the same three questions: <strong>which card</strong>, <strong>which variant</strong>, and <strong>which condition</strong>. The quantity comes last.</p>
+          <p class="panel panel--info"><span class="icon icon--info" aria-hidden="true"></span> One card + one variant + one condition = one entry. Everything else in this guide follows from that rule.</p>
+        </div>
+        <div class="split__media">
+          <div class="entry-formula" role="group" aria-labelledby="entry-formula-title">
+            <div class="entry-formula__head">
+              <p class="entry-formula__eyebrow">Entry identity</p>
+              <span class="entry-formula__stamp" aria-hidden="true">1 entry</span>
+            </div>
+            <h3 class="entry-formula__title" id="entry-formula-title">Three values build one record</h3>
+            <ol class="entry-formula__parts">
+              <li class="entry-formula__part entry-formula__part--card">
+                <span class="entry-formula__index" aria-hidden="true">01</span>
+                <span class="entry-formula__label">Card ID</span>
+                <span class="entry-formula__example">Charizard · Base Set · 4/102</span>
+              </li>
+              <li class="entry-formula__part entry-formula__part--variant">
+                <span class="entry-formula__index" aria-hidden="true">02</span>
+                <span class="entry-formula__label">Variant</span>
+                <span class="entry-formula__example">Holo</span>
+              </li>
+              <li class="entry-formula__part entry-formula__part--condition">
+                <span class="entry-formula__index" aria-hidden="true">03</span>
+                <span class="entry-formula__label">Condition</span>
+                <span class="entry-formula__example">Near Mint</span>
+              </li>
+            </ol>
+            <p class="entry-formula__equation">
+              <span>1 Card ID</span>
+              <span class="entry-formula__op">+</span>
+              <span>1 Variant</span>
+              <span class="entry-formula__op">+</span>
+              <span>1 Condition</span>
+              <span class="entry-formula__op">=</span>
+              <strong>1 Collection Entry</strong>
+            </p>
+            <div class="entry-formula__quantity">
+              <span class="mono-tag mono-tag--blue">Quantity</span>
+              <p>Tracks identical copies behind that entry — same card, same variant, same condition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="adding-cards">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Adding cards</h2>
+            <p>Seven steps from “I own this one” to a saved entry. Have the physical card in front of you — the finish and the wear are easier to judge in your hand than from memory.</p>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Open the card catalogue</h3>
+              <p>Start in the catalogue, not in your collection. The catalogue is the library of cards that exist; it is where every new entry begins. Open it from the main navigation.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/card-catalogue.svg" alt="Placeholder screenshot of the Binderly card catalogue, showing a search field, a grid of card tiles, and a filter sidebar." width="1600" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — the catalogue, where every entry starts.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step step--reverse">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Search for the Pokémon card</h3>
+              <p>Type what you know. A full card name works, and so does part of one. If two cards share a name, add the collector number printed in the corner, such as 58/102, to narrow the results.</p>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/first-card-search.svg" alt="Placeholder screenshot of catalogue search results, with a search field filled in and a short list of matching cards." width="1600" height="900">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — search results narrow the catalogue to the card you own.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Select the appropriate card</h3>
+              <p>Cards share names across sets, so check more than the name before you continue. The record you create now is the one you will live with, and the set and number are what tell two lookalikes apart.</p>
+            </div>
+            <div class="step__media">
+              <div class="ref-card ref-card--blue" role="group" aria-labelledby="verify-card-title">
+                <div class="ref-card__head">
+                  <p class="ref-card__kicker">Card verification</p>
+                  <span class="mono-tag mono-tag--blue">4 checks</span>
+                </div>
+                <h4 class="ref-card__title" id="verify-card-title">Charizard · Base Set</h4>
+                <p class="ref-card__sub">Collector no. 4/102</p>
+                <ul class="verify-list">
+                  <li>
+                    <span class="verify-list__key">Set</span>
+                    <span class="verify-list__val">Base Set</span>
+                    <span class="verify-list__check" role="img" aria-label="Matches">✓</span>
+                  </li>
+                  <li>
+                    <span class="verify-list__key">Number</span>
+                    <span class="verify-list__val">4/102</span>
+                    <span class="verify-list__check" role="img" aria-label="Matches">✓</span>
+                  </li>
+                  <li>
+                    <span class="verify-list__key">Name</span>
+                    <span class="verify-list__val">Charizard</span>
+                    <span class="verify-list__check" role="img" aria-label="Matches">✓</span>
+                  </li>
+                  <li>
+                    <span class="verify-list__key">Artwork</span>
+                    <span class="verify-list__val">Charizard on a dark blue ground</span>
+                    <span class="verify-list__check" role="img" aria-label="Matches">✓</span>
+                  </li>
+                </ul>
+                <p class="ref-card__foot">All four agree — select the card.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step--reverse">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Choose the available card variant</h3>
+              <p>The dialog lists the variants that exist for the card you selected. Choose the finish in your hand: Standard, Holo, Reverse Holo, or another option the catalogue specifies. Pick what you see, not what you wish you had.</p>
+              <a class="text-link" href="#card-variants">How to tell the variants apart</a>
+            </div>
+            <div class="step__media">
+              <div class="ref-card ref-card--teal" role="group" aria-labelledby="variant-check-title">
+                <div class="ref-card__head">
+                  <p class="ref-card__kicker">Variant quick-check</p>
+                  <span class="mono-tag mono-tag--teal">Tilt to light</span>
+                </div>
+                <h4 class="ref-card__title" id="variant-check-title">Follow the foil</h4>
+                <ul class="foil-check">
+                  <li>
+                    <span class="foil-map foil-map--standard" aria-hidden="true"><span class="foil-map__art"></span></span>
+                    <span class="foil-check__text"><strong>Standard</strong><span>No foil — matte throughout</span></span>
+                  </li>
+                  <li>
+                    <span class="foil-map foil-map--holo" aria-hidden="true"><span class="foil-map__art"></span></span>
+                    <span class="foil-check__text"><strong>Holo</strong><span>Foil in the artwork window</span></span>
+                  </li>
+                  <li>
+                    <span class="foil-map foil-map--reverse" aria-hidden="true"><span class="foil-map__art"></span></span>
+                    <span class="foil-check__text"><strong>Reverse Holo</strong><span>Foil on the card body</span></span>
+                  </li>
+                </ul>
+                <p class="ref-card__foot">The dialog lists only valid variants. A missing finish means the catalogue does not record it for this print.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Select its physical condition</h3>
+              <p>Compare the surface, edges, corners, and any creases with the six conditions below. Choose the closest description, not the most flattering one: the collection should match the card in your hand.</p>
+              <a class="text-link" href="#card-conditions">Read the six conditions</a>
+            </div>
+            <div class="step__media">
+              <div class="ref-card ref-card--yellow" role="group" aria-labelledby="inspection-title">
+                <div class="ref-card__head">
+                  <p class="ref-card__kicker">Physical inspection</p>
+                  <span class="mono-tag mono-tag--yellow">4 points</span>
+                </div>
+                <h4 class="ref-card__title" id="inspection-title">Check it under a bright light</h4>
+                <ol class="inspection-list">
+                  <li>
+                    <span class="inspection-list__num" aria-hidden="true">01</span>
+                    <span class="inspection-list__text"><strong>Surface</strong>Scratches, scuffs, or print lines</span>
+                  </li>
+                  <li>
+                    <span class="inspection-list__num" aria-hidden="true">02</span>
+                    <span class="inspection-list__text"><strong>Edges</strong>Whitening where the border has worn</span>
+                  </li>
+                  <li>
+                    <span class="inspection-list__num" aria-hidden="true">03</span>
+                    <span class="inspection-list__text"><strong>Corners</strong>Bends, dings, or softening</span>
+                  </li>
+                  <li>
+                    <span class="inspection-list__num" aria-hidden="true">04</span>
+                    <span class="inspection-list__text"><strong>Creases</strong>Folds or lines that run through the card</span>
+                  </li>
+                </ol>
+                <p class="ref-card__foot">Choose the closest condition, not the most flattering one.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step--reverse">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Enter the number of copies owned</h3>
+              <p>Count only the copies that match this card, this variant, and this condition. If two of your three copies are Near Mint and one is Played, that is one entry with quantity 2 and a second entry with quantity 1.</p>
+            </div>
+            <div class="step__media">
+              <div class="ref-card ref-card--peach quantity-split" role="group" aria-labelledby="quantity-split-title">
+                <div class="ref-card__head">
+                  <p class="ref-card__kicker">Quantity split</p>
+                  <span class="mono-tag mono-tag--yellow">3 copies</span>
+                </div>
+                <h4 class="ref-card__title" id="quantity-split-title">Same card, two conditions</h4>
+                <div class="quantity-split__entries">
+                  <div class="quantity-split__entry quantity-split__entry--near-mint">
+                    <span class="quantity-split__count">2×</span>
+                    <span class="quantity-split__meta"><strong>Near Mint</strong><span>Entry A · quantity 2</span></span>
+                    <span class="mono-tag mono-tag--teal">NM</span>
+                  </div>
+                  <div class="quantity-split__entry quantity-split__entry--played">
+                    <span class="quantity-split__count">1×</span>
+                    <span class="quantity-split__meta"><strong>Played</strong><span>Entry B · quantity 1</span></span>
+                    <span class="mono-tag mono-tag--yellow">PL</span>
+                  </div>
+                </div>
+                <p class="quantity-split__equation">2× Near Mint + 1× Played = <strong>2 separate entries</strong></p>
+                <p class="ref-card__foot">Quantity is not your binder total. It counts the identical copies — same card, same variant, same condition — behind this entry.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__body">
+              <span class="step__num" aria-hidden="true"></span>
+              <h3>Add the card to the collection</h3>
+              <p>Confirm the entry to add it to your collection. If an entry with the same card, variant, and condition already exists, Binderly increases its quantity instead of creating a duplicate. The change is saved locally.</p>
+              <a class="text-link" href="#duplicate-handling">What happens when entries match</a>
+            </div>
+            <div class="step__media">
+              <figure class="shot">
+                <img class="shot__img" src="assets/img/placeholders/add-card-dialog.svg" alt="Placeholder screenshot of the add-card dialog, showing the selected card with variant, condition, and quantity fields." width="1600" height="1000">
+                <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — confirming the entry before it joins the collection.</figcaption>
+              </figure>
+            </div>
+          </li>
+        </ol>
+
+        <div class="panel panel--warning mt-6">
+          <p class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>If a card is not in the catalogue</p>
+          <p>Manual card entry — adding a card the catalogue does not list — is planned for a later release and is not part of the current build. <span class="status status--planned" data-feature-status="manualCards">Planned</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--blue" id="card-variants">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Card variants</h2>
+            <p class="lead">The same card can reach your binder in more than one finish. The variant records which finish you actually own.</p>
+          </div>
+          <p class="mono-tag mono-tag--blue">Follow the foil</p>
+        </div>
+
+        <div class="variant-grid">
+          <article class="variant-card variant-card--standard">
+            <div class="variant-card__visual">
+              <span class="foil-map foil-map--standard" aria-hidden="true"><span class="foil-map__art"></span></span>
+              <span class="variant-card__badge">Matte</span>
+            </div>
+            <div class="variant-card__body">
+              <h3>Standard</h3>
+              <p class="variant-card__where"><span class="variant-card__swatch" aria-hidden="true"></span>Foil: none</p>
+              <p>The regular, non-foil print. The artwork has no holographic layer, and the card looks like the plain version from that set.</p>
+            </div>
+          </article>
+
+          <article class="variant-card variant-card--holo">
+            <div class="variant-card__visual">
+              <span class="foil-map foil-map--holo" aria-hidden="true"><span class="foil-map__art"></span></span>
+              <span class="variant-card__badge">Art foil</span>
+            </div>
+            <div class="variant-card__body">
+              <h3>Holo</h3>
+              <p class="variant-card__where"><span class="variant-card__swatch" aria-hidden="true"></span>Foil: artwork window</p>
+              <p>The artwork window is holographic. Tilt the card and the illustration catches the light while the rest of the card stays matte.</p>
+            </div>
+          </article>
+
+          <article class="variant-card variant-card--reverse">
+            <div class="variant-card__visual">
+              <span class="foil-map foil-map--reverse" aria-hidden="true"><span class="foil-map__art"></span></span>
+              <span class="variant-card__badge">Body foil</span>
+            </div>
+            <div class="variant-card__body">
+              <h3>Reverse Holo</h3>
+              <p class="variant-card__where"><span class="variant-card__swatch" aria-hidden="true"></span>Foil: card body</p>
+              <p>Where a set includes reverse holos, the foil moves to the card body: the area around the artwork catches the light while the artwork window stays non-foil.</p>
+            </div>
+          </article>
+
+          <article class="variant-card variant-card--other">
+            <div class="variant-card__visual">
+              <span class="foil-map foil-map--other" aria-hidden="true"><span class="foil-map__art"></span></span>
+              <span class="variant-card__badge">Catalogue-specific</span>
+            </div>
+            <div class="variant-card__body">
+              <h3>Other variants</h3>
+              <p class="variant-card__where"><span class="variant-card__swatch" aria-hidden="true"></span>Foil: varies by print</p>
+              <p>Some cards have additional finishes. When the card catalogue specifies another variant, it appears alongside the base three. Only variants valid for the selected card are presented, so you are never asked to choose a finish that does not exist for that print.</p>
+            </div>
+          </article>
+        </div>
+        <p class="variant-legend"><span class="variant-legend__swatch" aria-hidden="true"></span>Shaded areas in the mini cards show where the foil sits; flat cream is matte.</p>
+
+        <div class="split variant-detail mt-6">
+          <div class="split__copy">
+            <h3>Only the finishes that exist</h3>
+            <p>The dialog lists the variants recorded for the selected card. If a finish is missing, check that you selected the right card and set first; if those are right, the list is complete.</p>
+            <p class="panel panel--info"><span class="icon icon--info" aria-hidden="true"></span> Only valid variants are offered, so you are never asked to choose a finish that does not exist for that print.</p>
+          </div>
+          <div class="split__media">
+            <figure class="shot shot--raised">
+              <img class="shot__img" src="assets/img/placeholders/variant-dialog.svg" alt="Placeholder screenshot of the variant step, showing the selected card and a list of Standard, Holo, and Reverse Holo options." width="1600" height="1000">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — the variant step lists only valid finishes.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="card-conditions">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Card conditions</h2>
+            <p>Six descriptions, from a card that still looks pack-fresh to one that has lived a life. Pick the one that matches what you see.</p>
+          </div>
+        </div>
+
+        <p class="condition-legend"><span class="condition-legend__bar" aria-hidden="true"></span>Bar length shows how much of the card's original finish remains.</p>
+
+        <div class="condition-grid">
+          <article class="condition condition--mint">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">M</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Mint</h3>
+                <p class="condition__wear">No visible wear</p>
+              </div>
+              <span class="condition__scale condition__scale--mint" aria-hidden="true"></span>
+            </div>
+            <p>Pack-fresh. No visible wear on the surface, edges, or corners — nothing you would notice even under a light.</p>
+          </article>
+          <article class="condition condition--near-mint">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">NM</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Near Mint</h3>
+                <p class="condition__wear">One tiny flaw</p>
+              </div>
+              <span class="condition__scale condition__scale--near-mint" aria-hidden="true"></span>
+            </div>
+            <p>At most one tiny flaw, visible only on close inspection. The card still looks as though it was pulled this week.</p>
+          </article>
+          <article class="condition condition--excellent">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">EX</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Excellent</h3>
+                <p class="condition__wear">Light wear</p>
+              </div>
+              <span class="condition__scale condition__scale--excellent" aria-hidden="true"></span>
+            </div>
+            <p>Light wear you can see: a little edge whitening, a faint scratch, or slight corner softening. No creases.</p>
+          </article>
+          <article class="condition condition--good">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">GD</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Good</h3>
+                <p class="condition__wear">Honest handling</p>
+              </div>
+              <span class="condition__scale condition__scale--good" aria-hidden="true"></span>
+            </div>
+            <p>Honest handling wear: whitening along the edges, light scratches, or a small bend. The artwork is still clean.</p>
+          </article>
+          <article class="condition condition--played">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">PL</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Played</h3>
+                <p class="condition__wear">Heavy wear</p>
+              </div>
+              <span class="condition__scale condition__scale--played" aria-hidden="true"></span>
+            </div>
+            <p>Well-loved. Heavy edge wear, scuffs, or noticeable scratches. The card is intact and still recognisable.</p>
+          </article>
+          <article class="condition condition--damaged">
+            <div class="condition__head">
+              <span class="condition__badge" aria-hidden="true">DMG</span>
+              <div class="condition__identity">
+                <h3 class="condition__name">Damaged</h3>
+                <p class="condition__wear">Impaired</p>
+              </div>
+              <span class="condition__scale condition__scale--damaged" aria-hidden="true"></span>
+            </div>
+            <p>Creases, tears, staining, or missing material. Keep it recorded so your binder and your digital collection still agree.</p>
+          </article>
+        </div>
+
+        <div class="split mt-6">
+          <div class="split__media">
+            <figure class="shot">
+              <img class="shot__img" src="assets/img/placeholders/condition-dialog.svg" alt="Placeholder screenshot of the condition step, listing the six condition options with one selected." width="1600" height="1000">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — choosing one of the six conditions.</figcaption>
+            </figure>
+          </div>
+          <div class="split__copy">
+            <h3>Choose the closest match, not the kindest one</h3>
+            <p>Condition is a judgement, not a measurement. Look at the card under a bright light and compare it with the description that fits best. A little honest wear is not a reason to skip recording a card — consistency matters more than optimism, because the record should still make sense the next time you check your binder.</p>
+            <h3>Condition is part of the entry</h3>
+            <p>A Near Mint copy and a Played copy of the same card are two separate entries. If a card's condition changes over time, update the entry rather than leaving the old description in place.</p>
+            <p class="panel panel--info"><span class="icon icon--info" aria-hidden="true"></span> Binderly records the condition you choose. It does not estimate what a card is worth; the condition is simply the description you give it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--teal" id="managing-existing-cards">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Managing existing cards</h2>
+            <p>Collections change. A second copy arrives, a card picks up wear, a finish turns out to be different from what you first thought. Editing the entry keeps the record honest.</p>
+          </div>
+        </div>
+
+        <div class="split split--media-wide">
+          <div class="split__media">
+            <figure class="shot shot--raised">
+              <img class="shot__img" src="assets/img/placeholders/edit-card-dialog.svg" alt="Placeholder screenshot of the edit-entry dialog for a card already in the collection, with quantity, condition, and variant controls." width="1600" height="1000">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — editing an existing entry.</figcaption>
+            </figure>
+          </div>
+          <div class="split__copy">
+            <div class="stack">
+              <div>
+                <h3>Change the number of copies</h3>
+                <p>A second copy of the same print arrives, so raise the quantity. One leaves the binder, so lower it. Keeping the number current is the difference between a list and a record.</p>
+              </div>
+              <div>
+                <h3>Update the condition</h3>
+                <p>Cards pick up wear. If a Near Mint card becomes Excellent after a few years in a binder, edit the condition so the entry still describes the object on the shelf.</p>
+              </div>
+              <div>
+                <h3>Change the variant</h3>
+                <p>If you recorded the standard print but the card is actually reverse holo, correct the variant instead of deleting the entry and starting again.</p>
+              </div>
+              <div>
+                <h3>Remove a card</h3>
+                <p>When a card leaves your collection entirely, remove the entry. Removing deletes the entry and its quantity, and it is confirmed first.</p>
+                <a class="text-link" href="#removing-cards">How removal is confirmed</a>
+              </div>
+            </div>
+            <p class="panel panel--info"><span class="icon icon--info" aria-hidden="true"></span> An edit that makes one entry match another is a merge, and merges are confirmed before they happen. <a href="#duplicate-handling">Read about duplicate handling</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="duplicate-handling">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Duplicate handling</h2>
+            <p>Binderly groups entries by identity, not by name. The card ID, the variant, and the condition decide whether two records describe the same stack of cards.</p>
+          </div>
+        </div>
+
+        <div class="comparison-split identity-compare">
+          <div class="comparison-split__col">
+            <p class="comparison-split__head"><span>Same identity</span><span class="mono-tag mono-tag--teal">Merge</span></p>
+            <h3>One entry, quantity raised</h3>
+            <p>Card ID, variant, and condition all match. The existing entry absorbs the new copy instead of creating a second record.</p>
+            <div class="identity-compare__math" role="img" aria-label="Two copies plus one copy equals three copies in one entry">
+              <span class="identity-compare__num">2</span>
+              <span class="identity-compare__op" aria-hidden="true">+</span>
+              <span class="identity-compare__num">1</span>
+              <span class="identity-compare__op" aria-hidden="true">=</span>
+              <span class="identity-compare__num identity-compare__num--result">3</span>
+            </div>
+            <p class="identity-compare__verdict identity-compare__verdict--merge"><span class="icon icon--check" aria-hidden="true"></span>One entry. Quantity 3.</p>
+          </div>
+          <div class="comparison-split__col comparison-split__col--muted">
+            <p class="comparison-split__head"><span>Any value differs</span><span class="mono-tag">Separate</span></p>
+            <h3>Two entries, two quantities</h3>
+            <p>A Holo Near Mint and a Reverse Holo Near Mint are different entries, even though the card is the same. So are two Holo copies in different conditions.</p>
+            <div class="identity-compare__pairs">
+              <span class="identity-compare__pair"><span class="mono-tag mono-tag--blue">Holo · NM</span><span>Entry A · quantity 1</span></span>
+              <span class="identity-compare__pair"><span class="mono-tag mono-tag--teal">Reverse · NM</span><span>Entry B · quantity 1</span></span>
+            </div>
+            <p class="identity-compare__verdict"><span class="icon icon--layers" aria-hidden="true"></span>Two entries. Each keeps its own quantity.</p>
+          </div>
+        </div>
+
+        <p class="merge-table__caption" id="merge-example-caption">Worked example — rows 1 and 2 share one identity and merge; rows 3 and 4 differ by one value and stay separate.</p>
+        <p class="merge-table__hint">Swipe the table sideways to see the result column.</p>
+        <div class="table-wrap merge-table-wrap" tabindex="0" role="region" aria-label="Duplicate handling worked example. Scroll sideways to see the result column on narrow screens.">
+          <table class="data-table merge-table" aria-labelledby="merge-example-caption">
+            <thead>
+              <tr>
+                <th scope="col">Card</th>
+                <th scope="col">Variant</th>
+                <th scope="col">Condition</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody class="merge-table__group merge-table__group--same">
+              <tr>
+                <td>Charizard</td>
+                <td>Holo</td>
+                <td>Near Mint</td>
+                <td>2</td>
+                <td><span class="mono-tag mono-tag--teal">Existing entry</span></td>
+              </tr>
+              <tr>
+                <td>Charizard</td>
+                <td>Holo</td>
+                <td>Near Mint</td>
+                <td>1</td>
+                <td><span class="mono-tag mono-tag--teal">Merge → qty 3</span></td>
+              </tr>
+            </tbody>
+            <tbody class="merge-table__group merge-table__group--separate">
+              <tr>
+                <td>Charizard</td>
+                <td>Holo</td>
+                <td>Excellent</td>
+                <td>1</td>
+                <td><span class="mono-tag">Separate entry</span></td>
+              </tr>
+              <tr>
+                <td>Charizard</td>
+                <td>Standard</td>
+                <td>Near Mint</td>
+                <td>1</td>
+                <td><span class="mono-tag">Separate entry</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel panel--warning mt-6 merge-confirm">
+          <p class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>An edit that creates a match asks first</p>
+          <p>Suppose you correct an entry from Standard to Holo, and a Holo entry with the same condition already exists. Combining them would change two records at once, so Binderly asks for confirmation before the entries merge. Nothing is combined until you agree.</p>
+          <ol class="merge-confirm__steps">
+            <li><span class="merge-confirm__key">Edit</span><strong>Standard → Holo</strong></li>
+            <li><span class="merge-confirm__key">Match found</span><strong>Holo · Near Mint</strong></li>
+            <li><span class="merge-confirm__key">You confirm</span><strong>Quantities combine</strong></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--peach" id="removing-cards">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Removing cards</h2>
+            <p class="lead">Removing is for a card you no longer own — not for adjusting a quantity.</p>
+          </div>
+        </div>
+
+        <div class="comparison-split remove-compare">
+          <div class="comparison-split__col comparison-split__col--muted">
+            <p class="comparison-split__head"><span>Still own the card</span><span class="mono-tag mono-tag--teal">Keep entry</span></p>
+            <h3>Reduce the quantity</h3>
+            <p>You have three copies and one leaves the binder. Edit the quantity from 3 to 2. The entry stays, and the card remains in your collection.</p>
+            <div class="remove-compare__math remove-compare__math--keep" role="img" aria-label="Quantity changes from 3 to 2; the entry is kept">
+              <span>3</span>
+              <span class="remove-compare__arrow" aria-hidden="true">→</span>
+              <span>2</span>
+            </div>
+            <p class="remove-compare__verdict remove-compare__verdict--keep"><span class="icon icon--check" aria-hidden="true"></span>Entry kept · quantity updated</p>
+            <p class="remove-compare__action">Use <strong>Edit</strong> on the entry.</p>
+          </div>
+          <div class="comparison-split__col remove-compare__danger">
+            <p class="comparison-split__head"><span>No longer own the card</span><span class="mono-tag mono-tag--red">Remove</span></p>
+            <h3>Remove the entry entirely</h3>
+            <p>The card has left your collection. Remove deletes the entry and every copy counted behind it. This is not a quantity change.</p>
+            <div class="remove-compare__math remove-compare__math--remove" role="img" aria-label="Quantity changes from 3 to 0; the entry is removed">
+              <span>3</span>
+              <span class="remove-compare__arrow" aria-hidden="true">→</span>
+              <span>0</span>
+            </div>
+            <p class="remove-compare__verdict remove-compare__verdict--remove"><span class="icon icon--trash" aria-hidden="true"></span>Entry deleted · confirmation required</p>
+            <p class="remove-compare__action">Use <strong>Remove</strong>, then read the dialog.</p>
+          </div>
+        </div>
+
+        <div class="split split--reverse mt-6 removal-detail">
+          <div class="split__copy">
+            <h3>What the confirmation shows</h3>
+            <p>Open the entry and choose Remove. The confirmation dialog names the card, variant, and condition, so you can check that it is the entry you meant. Confirm, and the entry and its quantity are removed from the collection.</p>
+            <ul class="removal-checks">
+              <li>Card, variant, and condition are named in the dialog.</li>
+              <li>The whole entry and its quantity leave together.</li>
+              <li>Nothing is removed until you confirm.</li>
+            </ul>
+            <p class="panel panel--warning"><span class="icon icon--warning" aria-hidden="true"></span> <strong>Nothing is removed without confirmation.</strong> Removal takes the whole entry with it, so read the details in the dialog before you confirm.</p>
+          </div>
+          <div class="split__media">
+            <figure class="shot shot--outline">
+              <img class="shot__img" src="assets/img/placeholders/delete-confirmation.svg" alt="Placeholder screenshot of the removal confirmation dialog, naming the card, variant, and condition before deletion." width="1600" height="1000">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — removal asks for confirmation first.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-deep" id="local-saving">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Local saving</h2>
+            <p>Everything in this guide ends the same way: a change stored on your device.</p>
+          </div>
+        </div>
+        <div class="split">
+          <div class="split__media">
+            <div class="card card--outline">
+              <p class="panel__title"><span class="icon icon--save" aria-hidden="true"></span>Your collection, on your device</p>
+              <dl class="spec-list">
+                <dt>Saved</dt>
+                <dd>As you add, edit, or remove cards.</dd>
+                <dt>Kept</dt>
+                <dd>In the local collection on the device where Binderly runs.</dd>
+                <dt>Ready</dt>
+                <dd>Next time you open the app, between normal sessions.</dd>
+                <dt>Not needed</dt>
+                <dd>No account, no sign-in, and no cloud sync.</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="split__copy">
+            <p>Adding a card, correcting a variant, lowering a quantity, removing an entry — each change is written to the collection on the machine where you use Binderly. There is no account and no cloud sync, so the collection stays with that device and is there between normal sessions.</p>
+            <p>Binderly is a single-user desktop app. The collection on one device is not a shared library or a social profile; it is your own record of the cards you own.</p>
+            <div class="panel panel--warning">
+              <p class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>Backups are not available yet</p>
+              <p>Import and export are planned and are not part of the current build. Until they ship, Binderly cannot create or restore a backup file, so moving a collection between devices is not yet supported. <span class="status status--planned" data-feature-status="importExport">Planned</span></p>
+            </div>
+            <p><a class="text-link" href="features.html#local-saving">How saving works in Binderly</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <nav class="page-nav" aria-label="Guide pages">
+          <a href="getting-started.html">
+            <span>Previous</span>
+            <strong>Getting started</strong>
+          </a>
+          <a href="search-sort-filter.html">
+            <span>Next</span>
+            <strong>Search, sort &amp; filter</strong>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Feature labels reflect the project plan; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>

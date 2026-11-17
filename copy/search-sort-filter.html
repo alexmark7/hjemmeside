@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search, sort &amp; filter — Binderly guide</title>
+  <meta name="description" content="Learn how Binderly searches card names and numbers, sorts collection entries, and filters by expansion, type, stage, condition, and variant. Try the interactive sample collection.">
+  <meta name="theme-color" content="#fff7e6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Search, sort &amp; filter — Binderly guide">
+  <meta property="og:description" content="Searching finds cards, sorting changes their order, and filtering narrows what you see. Try the interactive demonstration.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/search-demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--butter">
+      <div class="container page-hero__inner">
+        <div>
+          <span class="tab-label">Guide 3 of 5</span>
+          <h1>Search, sort &amp; filter</h1>
+          <p class="lead">Search asks “which card is it?”, sorting asks “what order should they be in?”, and filtering asks “which cards should stay in view?”. Three different questions — and not one of them changes a collection entry.</p>
+        </div>
+        <aside class="page-hero__aside" aria-labelledby="in-this-guide">
+          <h2 id="in-this-guide">In this guide</h2>
+          <ul>
+            <li><a href="#three-tools">The three tools</a></li>
+            <li><a href="#searching">Searching</a></li>
+            <li><a href="#sorting">Sorting</a></li>
+            <li><a href="#filtering">Filtering</a></li>
+            <li><a href="#demo">Try the interactive demo</a></li>
+            <li><a href="#types-and-stages">Types and evolution stages</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="three-tools" aria-labelledby="three-tools-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="mono-tag mono-tag--blue">The three tools</span>
+            <h2 id="three-tools-title">Three questions, three different jobs</h2>
+            <p>Before you reach for a control, decide what you are asking. Search looks up a card, sorting reorders the list, and filtering narrows the set. None of them edits a collection entry.</p>
+          </div>
+          <p class="hand">find it, order it, narrow it</p>
+        </div>
+
+        <ul class="bento-grid">
+          <li class="card card--tint-blue">
+            <span class="feature-card__icon"><span class="icon icon--search" aria-hidden="true"></span></span>
+            <p><span class="mono-tag mono-tag--blue">01 · Search</span></p>
+            <h3>“Which card is it?”</h3>
+            <p><strong>Search finds a card by identity.</strong> Type a full or partial name, or a collector number such as <span class="code-badge">004/165</span>. It looks for the print in the catalogue and for your copies in the collection.</p>
+            <ul class="inline-list" aria-label="Search examples">
+              <li><span class="code-badge">char</span></li>
+              <li><span class="code-badge">004</span></li>
+              <li><span class="code-badge">004/165</span></li>
+            </ul>
+            <p><strong>Hides cards?</strong> Only those that do not match.</p>
+          </li>
+
+          <li class="card card--tint-teal">
+            <span class="feature-card__icon"><span class="icon icon--sort" aria-hidden="true"></span></span>
+            <p><span class="mono-tag mono-tag--teal">02 · Sort</span></p>
+            <h3>“What order should they be in?”</h3>
+            <p><strong>Sort reorders the current view.</strong> Pick one of 11 fields — name, expansion, number, category, type, stage, HP, retreat cost, condition, variant, or quantity — then choose ascending or descending.</p>
+            <ul class="inline-list" aria-label="Sorting facts">
+              <li><span class="chip">11 fields</span></li>
+              <li><span class="chip">Asc / Desc</span></li>
+              <li><span class="chip">Missing values last</span></li>
+            </ul>
+            <p><strong>Hides cards?</strong> Never.</p>
+          </li>
+
+          <li class="card card--tint-yellow">
+            <span class="feature-card__icon"><span class="icon icon--filter" aria-hidden="true"></span></span>
+            <p><span class="mono-tag mono-tag--yellow">03 · Filter</span></p>
+            <h3>“Which cards should stay in view?”</h3>
+            <p><strong>Filter narrows the visible set.</strong> Add conditions for expansion, category, Pokémon type, evolution stage, condition, or variant. Every selected filter must match at the same time.</p>
+            <ul class="inline-list" aria-label="Filtering facts">
+              <li><span class="chip">6 filter groups</span></li>
+              <li><span class="chip">AND logic</span></li>
+              <li><span class="chip">View only</span></li>
+            </ul>
+            <p><strong>Hides cards?</strong> Yes — until you clear the filter.</p>
+          </li>
+
+          <li class="card card--outline">
+            <p><span class="mono-tag mono-tag--red">The collector’s check</span></p>
+            <h3>None of them edits your binder</h3>
+            <p>Search, sort, and filter are <strong>view controls</strong>. They change what you see on screen — never the card, condition, variant, or quantity you recorded.</p>
+            <ul>
+              <li>Search = find</li>
+              <li>Sort = reorder</li>
+              <li>Filter = narrow</li>
+              <li>Clear = restore</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--paper-raised" id="searching">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="mono-tag mono-tag--blue">Tool 01 · Search</span>
+            <h2>Search: find a card by identity</h2>
+            <p>Search is a lookup. Type a full or partial name, or a collector number such as <span class="code-badge">004/165</span>, and Binderly returns every card whose name or number matches the text.</p>
+          </div>
+          <p class="hand">“I know the card — where is it?”</p>
+        </div>
+
+        <div class="split">
+          <div class="split__copy">
+            <h3>What you can type</h3>
+            <dl class="spec-list">
+              <dt>Full card name</dt>
+              <dd><span class="code-badge">Charizard</span> returns the card with that name.</dd>
+              <dt>Partial card name</dt>
+              <dd><span class="code-badge">char</span> returns Charizard, Charmander, Charmeleon, Charizard ex, and any other name containing those letters.</dd>
+              <dt>Full card number</dt>
+              <dd><span class="code-badge">004/165</span> matches that exact print number.</dd>
+              <dt>Partial card number</dt>
+              <dd><span class="code-badge">004</span> or <span class="code-badge">165</span> matches entries whose number contains it.</dd>
+            </dl>
+            <p class="mt-6"><strong>Search only narrows the current list.</strong> It does not reorder the cards, and it never edits an entry.</p>
+          </div>
+          <div class="split__media">
+            <figure class="shot shot--raised">
+              <img class="shot__img" src="assets/img/placeholders/search-results.svg" alt="Placeholder screenshot of search results for the query 'char', showing matching cards in the collection." width="1600" height="900">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — collection search for “char”.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="comparison-split mt-6">
+          <div class="comparison-split__col">
+            <p class="comparison-split__head"><span>Catalogue search</span><span class="mono-tag mono-tag--blue">Does this print exist?</span></p>
+            <h3>Find the card definition</h3>
+            <ul>
+              <li>Looks through every known card, whether you own it or not.</li>
+              <li>Confirms the name, expansion, number, category, type, stage, HP, and retreat cost.</li>
+              <li>A result is a <strong>print</strong> — a description of a card that exists.</li>
+            </ul>
+          </div>
+          <div class="comparison-split__col comparison-split__col--muted">
+            <p class="comparison-split__head"><span>Collection search</span><span class="mono-tag mono-tag--teal">Do I own a copy?</span></p>
+            <h3>Find your recorded copies</h3>
+            <ul>
+              <li>Looks only at entries already in your collection.</li>
+              <li>Shows the condition, variant, and quantity you recorded for each copy.</li>
+              <li>A result is <strong>your copy</strong> — the physical card in your binder.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sorting">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="mono-tag mono-tag--teal">Tool 02 · Sort</span>
+            <h2>Sort: reorder the view without hiding a card</h2>
+            <p>Sorting changes the order of the cards already on screen. Choose one field and one direction — every visible card stays visible, including the cards with missing values.</p>
+          </div>
+          <p class="hand">same cards, different order</p>
+        </div>
+
+        <div class="split split--reverse">
+          <div class="split__copy">
+            <h3>Eleven fields, two directions</h3>
+            <p>The sort field decides what the list is ordered by. The direction decides whether it runs low to high or high to low.</p>
+            <dl class="spec-list">
+              <dt>Card details</dt>
+              <dd>Card name · Expansion · Card number · Card category</dd>
+              <dt>Battle data</dt>
+              <dd>Type · Evolution stage · HP · Retreat cost</dd>
+              <dt>Your copy</dt>
+              <dd>Condition · Variant · Quantity</dd>
+            </dl>
+            <div class="panel panel--info">
+              <div class="panel__title"><span class="icon icon--sort" aria-hidden="true"></span>Ascending or descending</div>
+              <p><strong>Ascending</strong> goes A→Z, lowest→highest, or Basic→VSTAR. <strong>Descending</strong> reverses that order. Neither direction adds, removes, or edits a card.</p>
+            </div>
+          </div>
+          <div class="split__media">
+            <figure class="shot shot--raised">
+              <img class="shot__img" src="assets/img/placeholders/sorting-options.svg" alt="Placeholder screenshot of the sorting dialog with a field list and ascending or descending direction." width="1600" height="1000">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — sorting options.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="split mt-6">
+          <div class="split__copy">
+            <h3>Missing values are always placed last</h3>
+            <p>A Trainer card has no HP. An Energy card has no evolution stage. Those values are <strong>non-applicable</strong>, not zero, so Binderly pins them to the end of the list.</p>
+            <p>The rule holds in <strong>both directions</strong>: reversing the sort does not bring missing values to the top.</p>
+            <div class="panel panel--warning">
+              <div class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>Last in both directions</div>
+              <p>Sort by HP ascending or descending and Professor Oak still appears after every card with an HP value. The same applies to retreat cost, evolution stage, and any other field a card does not use.</p>
+            </div>
+          </div>
+          <div class="split__media">
+            <div class="table-wrap">
+              <table class="data-table">
+                <caption>Sorting four sample cards by HP. “No HP” stays at the bottom in both directions.</caption>
+                <thead>
+                  <tr><th scope="col">#</th><th scope="col">Ascending ↑</th><th scope="col">Descending ↓</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Pikachu · 60 HP</td><td>Charizard · 120 HP</td></tr>
+                  <tr><td>2</td><td>Blastoise · 100 HP</td><td>Blastoise · 100 HP</td></tr>
+                  <tr><td>3</td><td>Charizard · 120 HP</td><td>Pikachu · 60 HP</td></tr>
+                  <tr><td>Last</td><td>Professor Oak · <span class="mono-tag">no HP</span></td><td>Professor Oak · <span class="mono-tag">no HP</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-deep" id="filtering">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="mono-tag mono-tag--yellow">Tool 03 · Filter</span>
+            <h2>Filter: narrow the view without losing cards</h2>
+            <p>A filter is a condition a card must satisfy to stay visible. Unlike sorting, filtering removes cards from view — temporarily. Every hidden card remains safely in your collection.</p>
+          </div>
+          <p class="hand">fewer cards, same collection</p>
+        </div>
+
+        <ul class="bento-grid">
+          <li class="card bento-item--wide">
+            <p><span class="mono-tag mono-tag--yellow">Filter 01</span></p>
+            <h3>Expansion</h3>
+            <p>Where the print came from. Choose one expansion to see only that set.</p>
+            <ul class="inline-list" aria-label="Example expansions">
+              <li><span class="chip">Base Set</span></li>
+              <li><span class="chip">Jungle</span></li>
+              <li><span class="chip">Fossil</span></li>
+              <li><span class="chip">Scarlet &amp; Violet</span></li>
+              <li><span class="chip">Sword &amp; Shield</span></li>
+              <li><span class="chip">Crown Zenith</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <p><span class="mono-tag mono-tag--yellow">Filter 02</span></p>
+            <h3>Category</h3>
+            <p>Separate Pokémon, Trainer, and Energy cards.</p>
+            <ul class="inline-list" aria-label="Card categories">
+              <li><span class="chip">Pokémon</span></li>
+              <li><span class="chip">Trainer</span></li>
+              <li><span class="chip">Energy</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <p><span class="mono-tag mono-tag--yellow">Filter 03</span></p>
+            <h3>Evolution stage</h3>
+            <p>Keep only the stages you are looking for.</p>
+            <ul class="inline-list" aria-label="Evolution stages">
+              <li><span class="chip">Basic</span></li>
+              <li><span class="chip">Stage 1</span></li>
+              <li><span class="chip">Stage 2</span></li>
+              <li><span class="chip">VMAX</span></li>
+              <li><span class="chip">VSTAR</span></li>
+            </ul>
+          </li>
+
+          <li class="card bento-item--wide">
+            <p><span class="mono-tag mono-tag--yellow">Filter 04</span></p>
+            <h3>Pokémon type</h3>
+            <p>Match one of the 11 supported types. A dual-type card matches when it contains the selected type.</p>
+            <ul class="inline-list" aria-label="Supported Pokémon types">
+              <li><span class="type type--grass">Grass</span></li>
+              <li><span class="type type--fire">Fire</span></li>
+              <li><span class="type type--water">Water</span></li>
+              <li><span class="type type--lightning">Lightning</span></li>
+              <li><span class="type type--psychic">Psychic</span></li>
+              <li><span class="type type--fighting">Fighting</span></li>
+              <li><span class="type type--darkness">Darkness</span></li>
+              <li><span class="type type--metal">Metal</span></li>
+              <li><span class="type type--fairy">Fairy</span></li>
+              <li><span class="type type--dragon">Dragon</span></li>
+              <li><span class="type type--normal">Normal</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <p><span class="mono-tag mono-tag--yellow">Filter 05</span></p>
+            <h3>Condition</h3>
+            <p>Mint through Damaged, matching the condition recorded on each entry.</p>
+          </li>
+
+          <li class="card">
+            <p><span class="mono-tag mono-tag--yellow">Filter 06</span></p>
+            <h3>Variant</h3>
+            <p>Keep a single finish so the binder view matches the physical copy.</p>
+            <ul class="inline-list" aria-label="Card variants">
+              <li><span class="chip">Standard</span></li>
+              <li><span class="chip">Holo</span></li>
+              <li><span class="chip">Reverse Holo</span></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="split mt-6">
+          <div class="split__media">
+            <figure class="shot shot--raised">
+              <img class="shot__img" src="assets/img/placeholders/filter-controls.svg" alt="Placeholder screenshot of filter controls for expansion, type, condition, and variant." width="1600" height="900">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder screenshot — filter controls.</figcaption>
+            </figure>
+          </div>
+          <div class="split__copy">
+            <h3>Several filters, one AND rule</h3>
+            <p>A card must satisfy <strong>every</strong> selected filter at once. Adding another filter can only narrow the result further — it never widens it.</p>
+            <ul class="inline-list" aria-label="Example filter combination">
+              <li><span class="mono-tag mono-tag--red">Fire</span></li>
+              <li aria-hidden="true"><strong>AND</strong></li>
+              <li><span class="mono-tag">Pokémon</span></li>
+              <li aria-hidden="true"><strong>AND</strong></li>
+              <li><span class="mono-tag">Base Set</span></li>
+              <li aria-hidden="true"><strong>AND</strong></li>
+              <li><span class="mono-tag">Near Mint</span></li>
+              <li><strong>=</strong> <span class="mono-tag mono-tag--teal">Charizard only</span></li>
+            </ul>
+            <p>In the sample collection, those four conditions leave exactly one card: Charizard. Any active text search is applied as one more condition on top.</p>
+            <div class="panel panel--info">
+              <div class="panel__title"><span class="icon icon--info" aria-hidden="true"></span>Clearing filters keeps your search</div>
+              <p><strong>Clear filters</strong> resets the six filter groups (and the illustrative ranges) but leaves the text in the search field untouched. Search and filters are independent controls that combine with AND.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="types-and-stages">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <h2>Types and evolution stages</h2>
+            <p>The filter vocabulary should match the card catalogue. These are the eleven supported Pokémon types and the main evolution stages.</p>
+          </div>
+        </div>
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Eleven Pokémon types</h3>
+            <ul class="inline-list" aria-label="Supported Pokémon types">
+              <li><span class="type type--grass">Grass</span></li>
+              <li><span class="type type--fire">Fire</span></li>
+              <li><span class="type type--water">Water</span></li>
+              <li><span class="type type--lightning">Lightning</span></li>
+              <li><span class="type type--psychic">Psychic</span></li>
+              <li><span class="type type--fighting">Fighting</span></li>
+              <li><span class="type type--darkness">Darkness</span></li>
+              <li><span class="type type--metal">Metal</span></li>
+              <li><span class="type type--fairy">Fairy</span></li>
+              <li><span class="type type--dragon">Dragon</span></li>
+              <li><span class="type type--normal">Normal</span></li>
+            </ul>
+            <p class="mt-6">A card with multiple types matches a filter when it contains the selected type. The interactive demo includes a dual-type example.</p>
+          </div>
+          <div class="card">
+            <h3>Evolution stages</h3>
+            <ul class="inline-list" aria-label="Evolution stages">
+              <li><span class="chip">Basic</span></li>
+              <li><span class="chip">Stage 1</span></li>
+              <li><span class="chip">Stage 2</span></li>
+              <li><span class="chip">VMAX</span></li>
+              <li><span class="chip">VSTAR</span></li>
+              <li><span class="chip">Other applicable stages</span></li>
+            </ul>
+            <div class="panel panel--warning">
+              <div class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>Designations are not stages</div>
+              <p>“ex”, “EX”, “GX”, and “Mega” are card designations, not evolution stages. They should not automatically be treated as a stage when filtering or sorting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--blue" id="demo">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="mono-tag mono-tag--blue">Interactive demo</span>
+            <h2>Try it: search, sort, and filter 23 sample cards</h2>
+            <p>Search the set by name or number, reorder the full list, then stack filters and watch the count change. Everything runs in your browser with sample entries and original placeholder art.</p>
+          </div>
+        </div>
+
+        <div class="demo-shell" data-demo>
+          <ul class="inline-list" aria-label="How the demo controls differ">
+            <li><span class="mono-tag mono-tag--blue">Search</span> finds by name or number</li>
+            <li><span class="mono-tag mono-tag--teal">Sort</span> reorders · hides nothing</li>
+            <li><span class="mono-tag mono-tag--yellow">Filter</span> narrows · AND logic</li>
+          </ul>
+
+          <div class="demo-toolbar">
+            <div class="field">
+              <label class="field__label" for="demo-search">Search sample cards</label>
+              <input class="field__input" id="demo-search" type="search" placeholder="Try “char”, “004”, or “energy”" autocomplete="off" aria-describedby="demo-search-hint" data-demo-search>
+              <p class="field__hint" id="demo-search-hint">Matches full or partial names and collector numbers such as 004/165. Search stays active when you clear filters.</p>
+            </div>
+            <button class="btn btn--ghost" type="button" data-demo-reset>Clear filters</button>
+          </div>
+
+          <div class="demo-filters" role="group" aria-labelledby="demo-filters-title">
+            <h3 class="demo-filters__title" id="demo-filters-title">Filters combine with AND — sorting only reorders</h3>
+
+            <div class="field">
+              <label class="field__label" for="demo-expansion">Expansion</label>
+              <select class="field__select" id="demo-expansion" data-demo-filter="expansion">
+                <option value="">All expansions</option>
+                <option>Base Set</option>
+                <option>Jungle</option>
+                <option>Fossil</option>
+                <option>Scarlet &amp; Violet</option>
+                <option>Sword &amp; Shield</option>
+                <option>Crown Zenith</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-category">Card category</label>
+              <select class="field__select" id="demo-category" data-demo-filter="category">
+                <option value="">All categories</option>
+                <option>Pokémon</option>
+                <option>Trainer</option>
+                <option>Energy</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-type">Pokémon type</label>
+              <select class="field__select" id="demo-type" data-demo-filter="type">
+                <option value="">All types</option>
+                <option>Grass</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Lightning</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Darkness</option>
+                <option>Metal</option>
+                <option>Fairy</option>
+                <option>Dragon</option>
+                <option>Normal</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-stage">Evolution stage</label>
+              <select class="field__select" id="demo-stage" data-demo-filter="stage">
+                <option value="">All stages</option>
+                <option>Basic</option>
+                <option>Stage 1</option>
+                <option>Stage 2</option>
+                <option>VMAX</option>
+                <option>VSTAR</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-condition">Condition</label>
+              <select class="field__select" id="demo-condition" data-demo-filter="condition">
+                <option value="">All conditions</option>
+                <option>Mint</option>
+                <option>Near Mint</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Played</option>
+                <option>Damaged</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-variant">Variant</label>
+              <select class="field__select" id="demo-variant" data-demo-filter="variant">
+                <option value="">All variants</option>
+                <option>Standard</option>
+                <option>Holo</option>
+                <option>Reverse Holo</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-sort">Sort by</label>
+              <select class="field__select" id="demo-sort" data-demo-sort aria-describedby="demo-sort-hint">
+                <option value="name">Card name</option>
+                <option value="expansion">Expansion</option>
+                <option value="number">Card number</option>
+                <option value="category">Card category</option>
+                <option value="type">Type</option>
+                <option value="stage">Evolution stage</option>
+                <option value="hp">HP</option>
+                <option value="retreat">Retreat cost</option>
+                <option value="condition">Condition</option>
+                <option value="variant">Variant</option>
+                <option value="quantity">Quantity</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-direction">Direction</label>
+              <select class="field__select" id="demo-direction" data-demo-direction aria-describedby="demo-sort-hint">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
+              <p class="field__hint" id="demo-sort-hint">Missing values, like HP on a Trainer card, stay last in both directions.</p>
+            </div>
+
+            <div class="field demo-filters__wide">
+              <span class="field__label" id="demo-hp-label">HP range <span class="status status--planned">Planned in app</span></span>
+              <div class="demo-range">
+                <input class="field__input" type="number" inputmode="numeric" min="0" max="400" placeholder="Min HP" aria-label="Minimum HP (demo only)" aria-describedby="demo-hp-hint" data-demo-filter="minHp">
+                <input class="field__input" type="number" inputmode="numeric" min="0" max="400" placeholder="Max HP" aria-label="Maximum HP (demo only)" aria-describedby="demo-hp-hint" data-demo-filter="maxHp">
+              </div>
+              <p class="field__hint" id="demo-hp-hint">Illustrative control. HP range filtering is not confirmed for the current app.</p>
+            </div>
+
+            <div class="field demo-filters__wide">
+              <span class="field__label" id="demo-retreat-label">Retreat cost range <span class="status status--planned">Planned in app</span></span>
+              <div class="demo-range">
+                <input class="field__input" type="number" inputmode="numeric" min="0" max="5" placeholder="Min retreat" aria-label="Minimum retreat cost (demo only)" aria-describedby="demo-retreat-hint" data-demo-filter="minRetreat">
+                <input class="field__input" type="number" inputmode="numeric" min="0" max="5" placeholder="Max retreat" aria-label="Maximum retreat cost (demo only)" aria-describedby="demo-retreat-hint" data-demo-filter="maxRetreat">
+              </div>
+              <p class="field__hint" id="demo-retreat-hint">Illustrative control. Retreat-cost range filtering is not confirmed for the current app.</p>
+            </div>
+          </div>
+
+          <div class="demo-status">
+            <p role="status" aria-live="polite" data-demo-count>Showing all 23 sample cards</p>
+            <ul class="demo-active" data-demo-active aria-label="Active filters"></ul>
+          </div>
+
+          <ul class="demo-results" data-demo-results></ul>
+
+          <noscript>
+            <p class="demo-note">The interactive demo needs JavaScript. The guide above explains the same search, sort, and filter behaviour.</p>
+          </noscript>
+
+          <p class="demo-note">Demonstration only. The sample entries and placeholder card art are illustrative, and this page does not connect to the desktop application. The actual application should be checked for the final field list and filter behaviour.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <h2>How the demo maps to the app</h2>
+        <p class="lead">The controls above follow the behaviour described in the project plan. They are a teaching aid, not a claim that every control is already implemented.</p>
+        <dl class="spec-list">
+          <dt>Search</dt>
+          <dd>Full or partial card names and numbers. Catalogue search asks “does this print exist?”; collection search asks “do I own a copy?”.</dd>
+          <dt>Sort</dt>
+          <dd>One of 11 fields plus ascending or descending direction. Missing or non-applicable values appear last in both directions, and no cards are hidden.</dd>
+          <dt>Filters</dt>
+          <dd>Expansion, category, type, stage, condition, and variant. Multiple filters combine with AND, and the text search is applied on top.</dd>
+          <dt>HP and retreat ranges</dt>
+          <dd>Shown here as an illustration of a planned capability. They are not presented as a confirmed current feature.</dd>
+          <dt>Clear filters</dt>
+          <dd>Resets each filter control but keeps the text in the search field, matching the intended app behaviour.</dd>
+        </dl>
+        <div class="panel panel--warning">
+          <div class="panel__title"><span class="icon icon--warning" aria-hidden="true"></span>Release status</div>
+          <p>The first public release has not been published. Search, sorting, and filtering are core features, but their final availability should be verified in the released application.</p>
+        </div>
+
+        <nav class="page-nav mt-6" aria-label="Guide pages">
+          <a href="managing-your-collection.html"><span>Previous guide</span><strong>Managing your collection</strong></a>
+          <a href="statistics.html"><span>Next guide</span><strong>Collection statistics</strong></a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Feature labels reflect the project plan; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>

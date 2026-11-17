@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact the Binderly team</title>
+  <meta name="description" content="Ask a question, report a software issue, or send feedback about Binderly. The form validates your message in the browser; no submission endpoint is configured yet.">
+  <meta name="theme-color" content="#fff7e6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact the Binderly team">
+  <meta property="og:description" content="Questions, bug reports, and feedback about the Binderly collection manager.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">Guides</summary>
+              <ul class="nav__submenu">
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="managing-your-collection.html">Managing your collection</a></li>
+                <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+                <li><a href="statistics.html">Collection statistics</a></li>
+                <li><a href="import-export.html">Import &amp; export</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav__link" href="download.html">Download</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--butter">
+      <div class="container page-hero__inner">
+        <div>
+          <span class="tab-label">Contact</span>
+          <h1>Talk to the team</h1>
+          <p class="lead">Ask a question about the collection manager, report something that did not work, or tell us what would make Binderly more useful for your binder.</p>
+        </div>
+        <aside class="page-hero__aside" aria-labelledby="contact-note">
+          <p class="mono-tag">Nothing is sent</p>
+          <h2 id="contact-note">A note about this form</h2>
+          <p>No contact endpoint, email address, or phone number is configured for this student project. The form checks your message in the browser and prepares it for copying — nothing is transmitted or stored.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split contact-layout">
+          <div class="split__copy contact-guide">
+            <p class="mono-tag mono-tag--teal">Collector feedback · field notes</p>
+            <h2 id="contact-guide-title">What would you like to tell us?</h2>
+            <p class="lead">Feedback is most useful when it describes a real collecting moment: the card you were trying to record, the filter you expected to work, or the point where the collection stopped making sense.</p>
+
+            <div class="card card--tint-teal">
+              <h3>What helps in a bug report or feature note</h3>
+              <p>Keep it short and specific. These four details give the team enough context to act.</p>
+              <ul class="checklist-grid">
+                <li><strong>Card / set involved.</strong> Card name, set, and number if you know them.</li>
+                <li><strong>Action taken.</strong> The search, filter, add, edit, import, or export step.</li>
+                <li><strong>Expected vs. actual.</strong> What should have happened, and what did.</li>
+                <li><strong>OS &amp; app version.</strong> Include both once a public release exists.</li>
+              </ul>
+              <p class="contact-privacy">Leave out passwords, payment details, and home addresses. The phone number field is optional.</p>
+            </div>
+
+            <figure class="shot">
+              <img class="shot__img" src="assets/img/placeholders/contact.svg" alt="Placeholder illustration of an envelope and speech bubbles representing questions and feedback." width="1200" height="800">
+              <figcaption class="shot__caption"><span class="icon icon--info" aria-hidden="true"></span>Placeholder illustration — questions, feedback, and bug reports.</figcaption>
+            </figure>
+          </div>
+
+          <div class="stack">
+            <div class="card card--outline">
+              <h2 id="contact-form-title">Contact form</h2>
+              <p class="muted">Fields marked with an asterisk are required. Required fields and formats are checked locally in your browser.</p>
+
+              <form class="form" data-contact-form novalidate aria-labelledby="contact-form-title">
+                <div class="form__row">
+                  <div class="field">
+                    <label class="field__label" for="contact-name">Full name <span class="required" aria-hidden="true">*</span></label>
+                    <input class="field__input" id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-hint contact-name-error">
+                    <p class="field__hint" id="contact-name-hint">At least two characters.</p>
+                    <p class="field__error" id="contact-name-error" data-error-for="name"></p>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="contact-email">Email address <span class="required" aria-hidden="true">*</span></label>
+                    <input class="field__input" id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="contact-email-hint contact-email-error">
+                    <p class="field__hint" id="contact-email-hint">Format: name@example.com.</p>
+                    <p class="field__error" id="contact-email-error" data-error-for="email"></p>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="contact-phone">Phone number</label>
+                  <input class="field__input" id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="contact-phone-hint contact-phone-error">
+                  <p class="field__hint" id="contact-phone-hint">Optional. Only include it if you are comfortable sharing it.</p>
+                  <p class="field__error" id="contact-phone-error" data-error-for="phone"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
+                  <textarea class="field__textarea" id="contact-message" name="message" required aria-describedby="contact-message-hint contact-message-error"></textarea>
+                  <p class="field__hint" id="contact-message-hint">At least 10 characters. Do not include sensitive information.</p>
+                  <p class="field__error" id="contact-message-error" data-error-for="message"></p>
+                </div>
+
+                <button class="btn btn--primary btn--large btn--block" type="submit">Review message</button>
+                <p class="field__hint">No message is sent or stored. Reviewing only prepares text you can copy when a contact channel is published.</p>
+
+                <div class="form__status" data-contact-status role="status" aria-live="polite" tabindex="-1"></div>
+
+                <div class="field" data-contact-copy-wrap hidden>
+                  <label class="field__label" for="contact-copy">Message to copy</label>
+                  <textarea class="field__textarea" id="contact-copy" readonly data-contact-copy></textarea>
+                  <p class="field__hint">Nothing has been transmitted. Copy this text and send it through the team’s published contact channel when one is available.</p>
+                </div>
+
+                <button class="btn btn--ghost btn--block" type="button" data-contact-copy-button hidden>Copy message</button>
+              </form>
+            </div>
+
+            <aside class="panel panel--plain" aria-labelledby="form-details">
+              <h3 class="panel__title" id="form-details"><span class="icon icon--info" aria-hidden="true"></span>Form details</h3>
+              <dl class="spec-list">
+                <dt>Validation</dt>
+                <dd>In your browser, on submit</dd>
+                <dt>Delivery</dt>
+                <dd>No endpoint configured</dd>
+                <dt>Storage</dt>
+                <dd>None — nothing is transmitted</dd>
+                <dt>Phone</dt>
+                <dd>Optional; format-checked only</dd>
+              </dl>
+            </aside>
+          </div>
+        </div>
+
+        <div class="comparison-split mt-6">
+          <div class="comparison-split__col">
+            <h3 class="comparison-split__head">On this page <span class="mono-tag mono-tag--teal">Local only</span></h3>
+            <p>Your browser checks the required fields and prepares your message as plain text. If everything passes, a copy button appears so you can reuse the message anywhere.</p>
+          </div>
+          <div class="comparison-split__col comparison-split__col--muted">
+            <h3 class="comparison-split__head">Not connected yet <span class="mono-tag">No endpoint</span></h3>
+            <p>No inbox or database receives the message, and nothing is stored. When the team publishes a contact channel, paste the prepared text into it and send it yourself. Until then, check the <a href="https://github.com/alexmark7/hjemmeside" data-repo-link>project repository</a> for published issue channels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-deep">
+      <div class="container container--narrow">
+        <h2>Questions people ask before writing</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Will this form send an email?</summary>
+            <div>
+              <p>No. The website has no form endpoint configured, so it cannot deliver a message. It validates the fields and prepares the text for copying. Nothing is stored or transmitted by this page.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Can I report a software issue here?</summary>
+            <div>
+              <p>You can write a report in the message field and copy it. The project repository is the best place to check for published issue channels and release updates: <a href="https://github.com/alexmark7/hjemmeside" data-repo-link>project website repository</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Do I have to give my phone number?</summary>
+            <div>
+              <p>No. The phone number is optional. The form only checks its format if you choose to enter one.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>What happens when I press “Review message”?</summary>
+            <div>
+              <p>Your browser checks the required fields and formats. If they pass, the page prepares a plain-text copy of your message and offers a copy button. Nothing is sent or stored; the text stays in this tab until you close it.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Can I suggest a feature?</summary>
+            <div>
+              <p>Yes. Feedback about collecting workflows is welcome. If you are suggesting something like statistics or backup merging, check the <a href="about.html#future">future development section</a> first — it separates specified features from planned ideas.</p>
+            </div>
+          </details>
+        </div>
+
+        <nav class="page-nav mt-6" aria-label="Page navigation">
+          <a href="about.html"><span>Previous page</span><strong>About the project</strong></a>
+          <a href="index.html"><span>Back to the start</span><strong>Home</strong></a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span data-site-name>Binderly</span><span class="brand__dot" aria-hidden="true">.</span>
+        </a>
+        <p>A local desktop collection manager for Pokémon card collectors. Built for organising the cards you own — not for buying, selling, or valuing them.</p>
+      </div>
+      <div class="footer__col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="about.html">About the project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="getting-started.html">Getting started</a></li>
+          <li><a href="managing-your-collection.html">Managing your collection</a></li>
+          <li><a href="search-sort-filter.html">Search, sort &amp; filter</a></li>
+          <li><a href="statistics.html">Collection statistics</a></li>
+          <li><a href="import-export.html">Import &amp; export</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/alexmark7/hjemmeside" data-repo-link>Project repository</a></li>
+          <li><a href="about.html#team">Development team</a></li>
+          <li><a href="#main">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>Unofficial student project. Not affiliated with Nintendo, Creatures Inc., GAME FREAK inc., or The Pokémon Company. Pokémon and Pokémon TCG are trademarks of their respective owners. All card art shown on this site is original placeholder illustration. Feature labels reflect the project plan; the first public release has not yet been published.</p>
+      <p>© <span data-year>2026</span> <span data-site-name>Binderly</span> · SEP1 project</p>
+    </div>
+  </footer>
+</body>
+</html>
