@@ -4,7 +4,9 @@ A static, ten-page website for Binderly, a SEP1 student project: a local desktop
 
 ## View the site
 
-Open `index.html` directly in a browser, or serve the folder:
+- **GitHub Pages (live):** <https://alexmark7.github.io/hjemmeside/copy/>
+
+To view locally, open `index.html` directly in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8000
