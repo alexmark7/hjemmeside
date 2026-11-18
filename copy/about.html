@@ -63,24 +63,12 @@
         </div>
       </div>
       <div class="container">
-        <dl class="stat-banner project-meta" aria-label="SEP1 project summary">
-          <div class="project-meta__item">
-            <dt>Course</dt>
-            <dd>SEP1 Software Engineering Project</dd>
-          </div>
-          <div class="project-meta__item">
-            <dt>Architecture</dt>
-            <dd>Local Java desktop app</dd>
-          </div>
-          <div class="project-meta__item">
-            <dt>Scope</dt>
-            <dd>Single-user physical card binder</dd>
-          </div>
-          <div class="project-meta__item">
-            <dt>Status</dt>
-            <dd><span class="status status--partial">v0.1.0 · In development</span></dd>
-          </div>
-        </dl>
+        <ul class="stat-banner" aria-label="SEP1 project summary">
+          <li><span class="stat-banner__value">SEP1</span><span class="stat-banner__label">Course · software engineering project</span></li>
+          <li><span class="stat-banner__value">Java desktop</span><span class="stat-banner__label">Architecture · local application</span></li>
+          <li><span class="stat-banner__value">Single-user</span><span class="stat-banner__label">Scope · physical card binder</span></li>
+          <li><span class="stat-banner__value">v0.1.0</span><span class="stat-banner__label">Status · in development</span></li>
+        </ul>
       </div>
     </section>
 
@@ -88,7 +76,7 @@
       <div class="container">
         <div class="split split--media-wide">
           <div class="split__copy">
-            <p class="about-kicker">01 · The collector problem</p>
+            <div class="kicker"><span class="mono-tag mono-tag--yellow">01 · The collector problem</span></div>
             <h2>It started with a binder that stopped making sense.</h2>
             <p>Binderly came out of a broad SEP1 brief: work as a small team, gather requirements, design an application, build it, and test it. Choosing the problem was up to us, so we picked one we could describe from the inside.</p>
             <p>Collections do not get out of hand all at once. A binder fills, a shoebox appears, then a second box of doubles. Variants and conditions multiply the record-keeping: the same card can sit in a collection three times and still be three different things.</p>
@@ -112,30 +100,29 @@
           </div>
         </div>
 
-        <div class="about-process">
-          <div class="about-process__head">
-            <h3>The SEP1 process, in four passes.</h3>
-            <p>Requirements → Architecture &amp; UI → Implementation → Verification. Each pass produced something the next one could check, and findings sent the team back a step.</p>
-          </div>
-          <ol class="workflow-strip" aria-label="Four-stage SEP1 engineering process">
+        <div class="mt-6">
+          <div class="kicker"><span class="mono-tag mono-tag--blue">The SEP1 process</span></div>
+          <h3>The SEP1 process, in four passes.</h3>
+          <p class="muted">Requirements → Architecture &amp; UI → Implementation → Verification. Each pass produced something the next one could check, and findings sent the team back a step.</p>
+          <ol class="workflow-strip mt-6" aria-label="Four-stage SEP1 engineering process">
             <li>
-              <h4>Requirements</h4>
+              <h3>Requirements</h3>
               <p>Collector interviews, scope, priorities, and the feature-status list that keeps “planned” separate from “in the app”.</p>
             </li>
             <li>
-              <h4>Architecture &amp; UI</h4>
+              <h3>Architecture &amp; UI</h3>
               <p>A catalogue-versus-collection data model, screen flows, and the visual language used by the app and this website.</p>
             </li>
             <li>
-              <h4>Implementation</h4>
+              <h3>Implementation</h3>
               <p>The Java application, local storage, and this static project site — kept small enough for one team to finish and explain.</p>
             </li>
             <li>
-              <h4>Verification</h4>
+              <h3>Verification</h3>
               <p>Feature checks against the brief, an accessibility pass, defect notes, and the guides that document the intended workflow.</p>
             </li>
           </ol>
-          <p class="about-process__note"><span class="icon icon--info" aria-hidden="true"></span><span>The four stages ran as short loops. A test failure could send the team back to requirements; a new requirement could change the interface.</span></p>
+          <p class="muted mt-6"><span class="icon icon--info" aria-hidden="true"></span> The four stages ran as short loops. A test failure could send the team back to requirements; a new requirement could change the interface.</p>
         </div>
       </div>
     </section>
@@ -144,7 +131,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__text">
-            <p class="about-kicker">02 · Product philosophy</p>
+            <div class="kicker"><span class="mono-tag mono-tag--teal">02 · Product philosophy</span></div>
             <h2>Collecting is the point, not the price tag.</h2>
             <p>Binderly is a tool for organising a collection you already enjoy. It is deliberately not a tool for turning that collection into an investment.</p>
           </div>
@@ -152,14 +139,14 @@
 
         <p class="lead">Think about the table after a swap with a friend: a small stack of new cards, two of them doubles, one a variant you already own in worse condition. The job is to get them into the binder accurately — not to work out what they might be worth.</p>
 
-        <div class="comparison-split about-compare">
+        <div class="comparison-split mt-6">
           <section class="comparison-split__col" aria-labelledby="philosophy-built-for">
             <p class="comparison-split__head">
               <span>Built for</span>
               <span class="mono-tag mono-tag--teal">In scope</span>
             </p>
             <h3 id="philosophy-built-for">One accurate record of the cards you own.</h3>
-            <ul class="about-list about-list--check">
+            <ul class="checklist-grid">
               <li>Knowing exactly which cards you own, and how many copies of each.</li>
               <li>Keeping variants and conditions apart, so a holo copy is never confused with the standard print.</li>
               <li>Finding a specific card in seconds instead of flipping through binders.</li>
@@ -172,7 +159,7 @@
               <span class="mono-tag mono-tag--red">Out of scope</span>
             </p>
             <h3 id="philosophy-left-out">A marketplace, a price guide, a social network.</h3>
-            <ul class="about-list about-list--omit">
+            <ul class="detail-list">
               <li>No marketplace: no listings, offers, trades, or sales.</li>
               <li>No price tracking, valuations, or investment charts.</li>
               <li>No social feed, follower counts, or sharing prompts.</li>
@@ -181,11 +168,9 @@
           </section>
         </div>
 
-        <figure class="about-principle">
-          <blockquote>
-            <p>“If a feature only makes sense to someone trying to make money from cards, it does not belong in Binderly.”</p>
-          </blockquote>
-          <figcaption>The rule the team kept coming back to</figcaption>
+        <figure class="card card--tint-yellow mt-6">
+          <p class="lead">“If a feature only makes sense to someone trying to make money from cards, it does not belong in Binderly.”</p>
+          <figcaption class="mono-tag mono-tag--yellow">The rule the team kept coming back to</figcaption>
         </figure>
       </div>
     </section>
@@ -194,17 +179,17 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__text">
-            <p class="about-kicker">03 · Technical architecture</p>
+            <div class="kicker"><span class="mono-tag mono-tag--blue">03 · Technical architecture</span></div>
             <h2>A Java desktop application, kept deliberately small.</h2>
             <p>The application is a program on your computer, not a website you sign into. That keeps the project small: one person, one local collection, and no server in the middle.</p>
           </div>
         </div>
 
         <div class="grid grid--2">
-          <article class="card card--tint-blue about-spec" aria-labelledby="tech-confirmed">
-            <div class="about-spec__head">
+          <article class="card card--tint-blue" aria-labelledby="tech-confirmed">
+            <div class="kicker">
               <span class="mono-tag mono-tag--teal"><span class="icon icon--check" aria-hidden="true"></span>Confirmed</span>
-              <span class="about-spec__count">5 statements</span>
+              <span class="mono-tag">5 statements</span>
             </div>
             <h3 id="tech-confirmed">What we can state today.</h3>
             <dl class="spec-list">
@@ -219,13 +204,13 @@
               <dt>Backend</dt>
               <dd>None. No server, no online account, and no sign-in.</dd>
             </dl>
-            <p class="about-spec__note">These points come from the project brief and define the boundary the team is building inside.</p>
+            <p class="muted mt-6">These points come from the project brief and define the boundary the team is building inside.</p>
           </article>
 
-          <article class="card card--outline about-spec" aria-labelledby="tech-open">
-            <div class="about-spec__head">
+          <article class="card card--outline" aria-labelledby="tech-open">
+            <div class="kicker">
               <span class="mono-tag mono-tag--yellow"><span class="icon icon--info" aria-hidden="true"></span>To be confirmed</span>
-              <span class="about-spec__count">5 open questions</span>
+              <span class="mono-tag">5 open questions</span>
             </div>
             <h3 id="tech-open">What the team has not fixed yet.</h3>
             <dl class="spec-list">
@@ -240,7 +225,7 @@
               <dt>Supported systems</dt>
               <dd>Operating systems and system requirements will be listed on the Download page once confirmed.</dd>
             </dl>
-            <p class="about-spec__note">Left open on purpose: this page will be updated when the team confirms each detail, rather than guessed at in advance.</p>
+            <p class="muted mt-6">Left open on purpose: this page will be updated when the team confirms each detail, rather than guessed at in advance.</p>
           </article>
         </div>
 
@@ -252,7 +237,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__text">
-            <p class="about-kicker">04 · The team</p>
+            <div class="kicker"><span class="mono-tag mono-tag--yellow">04 · The team</span></div>
             <h2>Four areas of work, one small team.</h2>
             <p>The project is split into four areas of responsibility, from planning and requirements through to testing and documentation.</p>
           </div>
@@ -263,8 +248,8 @@
             <img src="assets/img/placeholders/team-avatar-1.svg" alt="Placeholder role emblem for the project lead and binder architect, with the initials PL." width="500" height="500">
             <h3>Team member one</h3>
             <p class="team-card__role">Project lead · requirements</p>
-            <p>Owns the plan and the requirements: keeps the scope realistic, records the team's decisions, and checks that each feature traces back to something a collector would actually use.</p>
-            <ul class="inline-list team-card__tags" aria-label="Project lead focus areas">
+            <p class="muted">Owns the plan and the requirements: keeps the scope realistic, records the team's decisions, and checks that each feature traces back to something a collector would actually use.</p>
+            <ul class="inline-list" aria-label="Project lead focus areas">
               <li><span class="mono-tag">Scope</span></li>
               <li><span class="mono-tag">Decisions</span></li>
               <li><span class="mono-tag">Traceability</span></li>
@@ -275,8 +260,8 @@
             <img src="assets/img/placeholders/team-avatar-2.svg" alt="Placeholder role emblem for the Java core engineer, with the initials JE." width="500" height="500">
             <h3>Team member two</h3>
             <p class="team-card__role">Java application developer</p>
-            <p>Responsible for the desktop application: the card catalogue, the collection records, search, sorting, filtering, and saving to local storage.</p>
-            <ul class="inline-list team-card__tags" aria-label="Java developer focus areas">
+            <p class="muted">Responsible for the desktop application: the card catalogue, the collection records, search, sorting, filtering, and saving to local storage.</p>
+            <ul class="inline-list" aria-label="Java developer focus areas">
               <li><span class="mono-tag">Catalogue</span></li>
               <li><span class="mono-tag">Collection records</span></li>
               <li><span class="mono-tag">Local saving</span></li>
@@ -287,8 +272,8 @@
             <img src="assets/img/placeholders/team-avatar-3.svg" alt="Placeholder role emblem for the UI and frontend designer, with the initials UI." width="500" height="500">
             <h3>Team member three</h3>
             <p class="team-card__role">UI &amp; front-end developer</p>
-            <p>Shapes the desktop interface and this website: layout, readable type, keyboard-friendly controls, and the placeholder visual system that stands in for screenshots.</p>
-            <ul class="inline-list team-card__tags" aria-label="UI and front-end focus areas">
+            <p class="muted">Shapes the desktop interface and this website: layout, readable type, keyboard-friendly controls, and the placeholder visual system that stands in for screenshots.</p>
+            <ul class="inline-list" aria-label="UI and front-end focus areas">
               <li><span class="mono-tag">Interface</span></li>
               <li><span class="mono-tag">Accessibility</span></li>
               <li><span class="mono-tag">Website</span></li>
@@ -299,8 +284,8 @@
             <img src="assets/img/placeholders/team-avatar-4.svg" alt="Placeholder role emblem for the QA and documentation specialist, with the initials QA." width="500" height="500">
             <h3>Team member four</h3>
             <p class="team-card__role">QA &amp; documentation</p>
-            <p>Tests each feature against the requirements, records what fails and what gets fixed, and maintains the guides, release notes, and this page.</p>
-            <ul class="inline-list team-card__tags" aria-label="QA and documentation focus areas">
+            <p class="muted">Tests each feature against the requirements, records what fails and what gets fixed, and maintains the guides, release notes, and this page.</p>
+            <ul class="inline-list" aria-label="QA and documentation focus areas">
               <li><span class="mono-tag">Test passes</span></li>
               <li><span class="mono-tag">Defect log</span></li>
               <li><span class="mono-tag">Guides</span></li>
@@ -316,7 +301,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__text">
-            <p class="about-kicker">05 · Repository</p>
+            <div class="kicker"><span class="mono-tag mono-tag--blue">05 · Repository</span></div>
             <h2>Where the project is published.</h2>
             <p>The public record lives in a static GitHub repository. It holds this website, not the application download — that distinction is stated plainly below.</p>
           </div>
@@ -330,8 +315,8 @@
             <p class="panel panel--warning"><span class="icon icon--warning" aria-hidden="true"></span> That repository holds the website, not a download of the application. If you are looking for the program itself, the Download page explains what is available and when.</p>
           </div>
           <div class="split__media">
-            <div class="card card--outline about-repo">
-              <div class="about-repo__head">
+            <div class="card card--outline">
+              <div class="kicker">
                 <span class="mono-tag mono-tag--blue">alexmark7 / hjemmeside</span>
                 <span class="code-badge">static site</span>
               </div>
@@ -356,7 +341,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__text">
-            <p class="about-kicker">06 · Specification roadmap</p>
+            <div class="kicker"><span class="mono-tag mono-tag--yellow">06 · Specification roadmap</span></div>
             <h2>Specified now, planned later.</h2>
             <p>This table separates what is in the app from what is still planned. It is a specification roadmap, not a release promise.</p>
           </div>
@@ -374,7 +359,7 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="rowgroup" colspan="3">In the app <span class="about-table__count">8 core features</span></th>
+                <th scope="rowgroup" colspan="3">In the app <span class="mono-tag">8 core features</span></th>
               </tr>
               <tr>
                 <th scope="row">Collection records</th>
@@ -419,7 +404,7 @@
             </tbody>
             <tbody>
               <tr>
-                <th scope="rowgroup" colspan="3">Planned <span class="about-table__count">6 candidate features</span></th>
+                <th scope="rowgroup" colspan="3">Planned <span class="mono-tag">6 candidate features</span></th>
               </tr>
               <tr>
                 <th scope="row">Import &amp; export</th>
