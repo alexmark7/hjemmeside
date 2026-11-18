@@ -45,12 +45,12 @@
   };
 
   var COLORS = {
-    blue: "#1f569c",
-    teal: "#186b5b",
-    yellow: "#e0a326",
-    red: "#bf3b38",
-    brown: "#a99676",
-    slate: "#5d4a91"
+    blue: "#2563eb",
+    teal: "#0d9488",
+    yellow: "#eab308",
+    red: "#e11d48",
+    brown: "#64748b",
+    slate: "#6d28d9"
   };
 
   var SVG_NS = "http://www.w3.org/2000/svg";
@@ -118,7 +118,7 @@
       cx: cx,
       cy: cy,
       r: radius,
-      fill: "#ece5d5"
+      fill: "#f1f5f9"
     }));
 
     var angle = 0;
@@ -127,7 +127,7 @@
       var path = svgElement("path", {
         d: donutPath(cx, cy, radius, thickness, angle, angle + sweep),
         fill: COLORS[part.color] || COLORS.blue,
-        stroke: "#fffdf9",
+        stroke: "#ffffff",
         "stroke-width": "3"
       });
       svg.appendChild(path);
@@ -138,7 +138,7 @@
       cx: cx,
       cy: cy,
       r: radius - thickness,
-      fill: "#fffdf9"
+      fill: "#ffffff"
     }));
 
     var totalText = svgElement("text", {
